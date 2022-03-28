@@ -1,0 +1,43 @@
+  431  mkdir unix_tests
+  432  cd unix_tests/
+  433  touch trybe.txt
+  434  ls
+  435  cp trybe.txt trybe_backup.txt 
+  436  ls
+  437  mv trybe.txt trybe_renamed.txt
+  438  ls
+  439  mkdir backup
+  440  ls
+  441  mv trybe_backup.txt backup/
+  442  ls
+  443  mkdir backup2
+  444  ls
+  445  mv ./backup/trybe_backup.txt ./backup2
+  446  ls -a
+  447  rm backup
+  448  rmdir backup
+  449  clear
+  450  head -5 skills.txt 
+  451  tail -4 skills.txt 
+  452  ls
+  453  rm *.txt
+  454  ls
+  455  curl -o countries.txt "https://gist.githubusercontent.com/kalinchernev/486393efcca01623b18d/raw/daa24c9fea66afb7d68f8d69f0c4b8eeb9406e83/countries"
+  456  ls
+  457  cat countries.txt 
+  458  less countries.txt 
+  459  grep Brazil countries.txt 
+  460  grep -i brazil countries.txt 
+  461  cat > phrases.txt
+  462  ls
+  463  grep -v fox phrases.txt 
+  464  wc -w phrases.txt 
+  465  wc -l phrases.txt 
+  466  touch empty.tbt empty.pdf
+  467  ls
+  468  ls*
+  469  ls *
+  470  ls *.txt
+  471  ls *.txt *.tbt
+  472  man ls
+  473  history | cat > exercicios-parte-1
