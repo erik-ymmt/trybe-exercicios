@@ -1,0 +1,60 @@
+ol {
+    background-color: yellow;
+}
+
+ol li:nth-last-of-type(even) {
+    color: green;
+}
+
+ol li:nth-last-of-type(odd) {
+    text-transform:uppercase;
+}
+
+h1, h2, h3 {
+    color: red;
+}
+
+h1 em, h2 em, h3 em{
+    font-size: 40px;
+    border: 1px solid;
+}
+
+li {
+    font-size: 20px;
+}
+
+li em {
+    font-weight: bold;
+}
+
+#languages li:nth-child(-n+3) {
+    color: blue;
+}
+
+.pink-java {
+    background-color: pink;
+}
+
+#SO:hover {
+    color: orange;
+}
+
+#W3:hover {
+    color: green;
+}
+
+#MDN:hover {
+    color: black;
+}
+
+#devdocs:hover {
+    color: yellow;
+}
+
+#trybe:hover {
+    color: green;
+}
+
+.font-list {
+    font-weight: bold;
+}

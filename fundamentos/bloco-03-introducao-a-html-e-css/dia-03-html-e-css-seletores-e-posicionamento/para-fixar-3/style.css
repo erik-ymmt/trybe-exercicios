@@ -1,0 +1,19 @@
+h1, p {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+li {
+    list-style: none;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+li:hover {
+    background-color: black;
+    color:white;
+}
+
+li:active {
+    font-family: serif;
+}
