@@ -14,6 +14,6 @@ if (cost < 0 || price < 0) {
 } else {
     //calculates the profit
     profit = (sales) * (price - costAfterTaxes);
+    //prints the profit
+    console.log(profit);
 }
-//prints the profit
-console.log(profit);

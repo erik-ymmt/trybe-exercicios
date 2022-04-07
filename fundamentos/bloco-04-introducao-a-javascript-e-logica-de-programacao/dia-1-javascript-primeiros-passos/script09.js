@@ -11,7 +11,7 @@ function uneven (num) {
     }
 }
 
-//check if any of the 3 numbers is uneven
+//check if any of the 3 numbers is odd/uneven
 if (uneven(num1) == true || uneven(num2) == true || uneven(num3) == true ) {
     console.log('true. There is an uneven number.');
 } else {

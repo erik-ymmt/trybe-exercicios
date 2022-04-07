@@ -73,10 +73,10 @@ const conditionTwo = false;
 
 console.log(conditionOne && conditionTwo);
 
-const currentHour = 22;
+const currentHour = 2;
 let message = '';
 
-if (currentHour >= 22) {
+if (currentHour >= 22 && currentHour <=24) {
     message = "Não deveríamos comer nada, é hora de dormir";
 } else if (currentHour >= 18 && currentHour < 22) {
     message = "Rango da noite, vamos jantar :D";
@@ -84,8 +84,10 @@ if (currentHour >= 22) {
     message = "Vamos fazer um bolo pro café da tarde?"
 } else if (currentHour >= 11 && currentHour < 14) {
     message = "Hora do almoço!!!";
-} else {
+} else if (currentHour >= 4 && currentHour < 11) {
     message = "Hmmm, cheiro de café recém passado";
+} else {
+    message = "Hora inválida. Por favor insira valores de 4 até 24"
 }
 
 console.log(message);
