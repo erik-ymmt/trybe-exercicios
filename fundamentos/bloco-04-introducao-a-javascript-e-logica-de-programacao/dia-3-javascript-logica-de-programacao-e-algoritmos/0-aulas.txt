@@ -1,0 +1,32 @@
+Algoritmo 'arrumar para uma festa':
+
+qual o tipo de festa?
+abrir o armário
+procurar pela roupa adequada para o tipo de festa
+retirar a roupa do armário
+trocar de roupa
+fechar o armário
+conferir o endereço da festa
+pedir um uber
+
+--
+
+Algoritmo do exercício bônus 1 do dia 4.2:
+
+criar um loop que percorre todos os números do array {
+    declarar uma variável "i" com valor 0;
+    a variável deve percorrer todos os valores até a totalidade do array;
+    a partir do zero, até o último número do array deve se incrementar 1 de cada vez;
+
+para cada posição do array, comparar com todas as outras posições "a frente" {
+    criar um loop para todas as posições "a frente"{
+        declarar uma variável "j" que inicia da última posição;
+        a variável deve percorrer todos os números maiores que a variável "i";
+        a partir do último número do array, a variável deve percorrer cada posição uma a uma em forma decrescente;
+    }
+    caso o valor do array representado pela variável "j", que está "a frente", seja menor que "i" {
+        inverter a posição dos números do array, ou seja, "i" passa a ser "j", e "j" passa a ser "i"
+    }
+}
+
+imprimir o resultado do array ordenado;
