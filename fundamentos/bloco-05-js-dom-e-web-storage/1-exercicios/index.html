@@ -55,12 +55,12 @@ function mudarTexto() {
 }
 mudarTexto();
 
-//  Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
-function mudarCor() {
-    const square = document.getElementsByClassName('main-content');
-    square[0].style.backgroundColor = 'rgb(76,164,109)';
+//  Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)). TESTE COM PARAMETROS
+function mudarCor(className, rgb) {
+    const square = document.getElementsByClassName(className);
+    square[0].style.backgroundColor = rgb;
 }
-mudarCor();
+mudarCor('main-content', 'rgb(76,164,109)');
 
 //  Crie uma função que mude a cor do quadrado vermelho para branco.
 function mudarCor2() {
@@ -69,12 +69,12 @@ function mudarCor2() {
 }
 mudarCor2();
 
-//  Crie uma função que corrija o texto da tag <h1>.
-function corrijeTexto() {
+//  Crie uma função que corrija o texto da tag <h1>. TYPO
+function corrigeTexto() {
     const title = document.getElementsByClassName('title');
     title[0].innerText =  'Exercício 5.1 - JavaScript';
 }
-corrijeTexto();  
+corrigeTexto();  
 
 //  Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
 function modificaTexto() {
