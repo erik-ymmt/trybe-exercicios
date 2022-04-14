@@ -99,4 +99,3 @@ function addContagem (numeroDoArray) {
 
 arrayRepete.forEach(addContagem);
 console.log(contagem);
-
