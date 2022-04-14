@@ -81,26 +81,25 @@ let numero5 = 5;
 let espacos3 = '';
 let asteriscos5 = '*';
 
-
-
-for (let j = 0; j <= numero5; j += 2) {
-    if (j == 0) {
-        repeteEspacos = (numero5 - 1) / 2;
-        console.log(' '.repeat(repeteEspacos) + asteriscos5);
-    }
-    else if (j < numero5 && j != 0) {
-        for (let k = 0; k < j; k += 1) {
-             espacos3 += ' '; 
-        }
-        console.log(asteriscos5 + espacos3 + asteriscos5)
-    } else if (j > numero5 && j != 0) {
-        for (let i = 0; i < numero5; i += 1) {
-            asteriscos5 += '*';
-        }
-        console.log(asteriscos5);
-    } else {
-        console.log('Erro')
-    }
-}
+//TODO
+// for (let j = 0; j <= numero5; j += 2) {
+//     if (j === 0) {
+//         repeteEspacos = (numero5 - 1) / 2;
+//         console.log(' '.repeat(repeteEspacos) + asteriscos5);
+//     }
+//     else if (j < numero5 && j != 0) {
+//         for (let k = 0; k < j; k += 1) {
+//              espacos3 += ' '; 
+//         }
+//         console.log(asteriscos5 + espacos3 + asteriscos5)
+//     } else if (j > numero5 && j != 0) {  //errado aqui, nao é maior j > numero
+//         for (let i = 0; i < numero5; i += 1) {
+//             asteriscos5 += '*';
+//         }
+//         console.log(asteriscos5);
+//     } else {
+//         console.log('Erro')
+//     }
+// }
 
 //referência: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
