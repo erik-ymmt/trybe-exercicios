@@ -22,7 +22,7 @@ for (let i = 0; i < numero; i += 1) {
     console.log(asteriscos);
 }
 
-//2.Faça o mesmo que antes, mas que imprima um triângulo retângulo com 5 asteriscos de base
+// 2.Faça o mesmo que antes, mas que imprima um triângulo retângulo com 5 asteriscos de base
 let numero2 = 5;
 let asteriscos2 = '';
 
@@ -31,7 +31,7 @@ for (let i = 0; i < numero; i += 1) {
     console.log(asteriscos2);
 }
 
-//3.Agora inverta o lado do triângulo.
+// 3.Agora inverta o lado do triângulo.
 let numero3 = 5;
 
 for (let i = 1; i <= numero3; i += 1) {
@@ -51,7 +51,7 @@ for (let i = 1; i <= numero3; i += 1) {
     console.log(piramide);
 }
 
-//4.Faça uma pirâmide com n asteriscos de base
+// 4.Faça uma pirâmide com n asteriscos de base
     //tem que ser número ímpar
 let numero4 = 11;
 
@@ -76,30 +76,46 @@ if (numero4 % 2 != 0 && numero4 > 0) {
     console.log('Valor inválido. Para formar uma pirâmide é necessário um número ímpar positivo.')
 }
 
-//5. Faça uma pirâmide com n asteriscos de base que seja vazia no meio. Assuma que o valor de n será sempre ímpar:
-let numero5 = 5;
-let espacos3 = '';
-let asteriscos5 = '*';
+// 5. Faça uma pirâmide com n asteriscos de base que seja vazia no meio. Assuma que o valor de n será sempre ímpar:
+let numero5 = 55;
+let meio = (numero5 + 1) / 2;
+let controleEsq = meio;
+let controleDir = meio;
 
-//TODO
-// for (let j = 0; j <= numero5; j += 2) {
-//     if (j === 0) {
-//         repeteEspacos = (numero5 - 1) / 2;
-//         console.log(' '.repeat(repeteEspacos) + asteriscos5);
-//     }
-//     else if (j < numero5 && j != 0) {
-//         for (let k = 0; k < j; k += 1) {
-//              espacos3 += ' '; 
-//         }
-//         console.log(asteriscos5 + espacos3 + asteriscos5)
-//     } else if (j > numero5 && j != 0) {  //errado aqui, nao é maior j > numero
-//         for (let i = 0; i < numero5; i += 1) {
-//             asteriscos5 += '*';
-//         }
-//         console.log(asteriscos5);
-//     } else {
-//         console.log('Erro')
-//     }
-// }
+for (let line = 1; line <= meio; line += 1) {
+    let lineImpressa = '';
+    for (let coluna = 1; coluna <= numero5; coluna += 1) {
+        if (coluna == controleEsq || coluna == controleDir || line == meio) {
+            lineImpressa += '*'
+        } else {
+            lineImpressa += ' '
+        }
+    }
+    controleEsq -= 1;
+    controleDir += 1;
+    console.log(lineImpressa);
+}
 
 //referência: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
+
+// 6- Faça um programa que diz se um número definido numa variável é primo ou não.
+function primoCheck(num) {
+    controleDivisores = 0;
+
+    for (let div = 2; div < num; div += 1) {
+        if (num % div === 0) {
+            controleDivisores += 1;
+        }
+    }
+
+    if (controleDivisores > 0) {
+        return false;
+    }
+    return true;
+}
+
+console.log(primoCheck(2));
+console.log(primoCheck(20));
+console.log(primoCheck(17));
+console.log(primoCheck(97));
+console.log(primoCheck(200));
