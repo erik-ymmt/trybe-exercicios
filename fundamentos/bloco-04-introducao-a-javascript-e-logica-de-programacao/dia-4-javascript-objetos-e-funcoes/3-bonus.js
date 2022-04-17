@@ -50,9 +50,17 @@ for (let i = 0; i < basket.length; i += 1) {
     }   
 }
 
-  console.log(basketList);
-
-  //TODO como imprimir?
+  let result = 'Sua cesta possui: ';
+  
+    for (fruits in basketList) {
+      if (basketList[fruits] > 1) {
+        result += `${basketList[fruits]} ${fruits}s, ` 
+      } else {
+        result += `${basketList[fruits]} ${fruits}, `
+      }
+    }
+    result += 'fim da lista.'
+    console.log(result);
 
 
 // 4 - Acesse as chaves nome , sobrenome , andar e apartamento do último morador do blocoDois e faça um console.log no seguinte formato: "O morador do bloco 2 de nome Zoey Brooks mora no 1° andar, apartamento 101".
@@ -88,4 +96,32 @@ let moradores = {
     ],
   };
 
+  let name1  = moradores['blocoDois'][1]['nome'];
+  let lastName = moradores['blocoDois'][1]['sobrenome'];
+  let floor = moradores['blocoDois'][1]['andar'];
+  let apt = moradores['blocoDois'][1]['apartamento'];
+  console.log(`O(A) morador(a) do Bloco 2 de nome ${name1} ${lastName} mora no ${floor}° andar, apartamento ${apt}.`);
+
 // 5 - Utilize o for para imprimir o nome completo de todos os moradores do bloco 1, acessando suas chaves nome e sobrenome , depois faça o mesmo para os moradores do bloco 2.
+
+let moradores1 = "Moradores Bloco 1: "
+
+for (let i = 0; i < moradores['blocoUm'].length; i += 1) {
+  if (i == (moradores['blocoUm'].length - 1)) {
+    moradores1 += moradores['blocoUm'][i]['nome'] + ' ' + moradores['blocoUm'][i]['sobrenome'] + '.';
+  } else {
+    moradores1 += moradores['blocoUm'][i]['nome'] + ' ' + moradores['blocoUm'][i]['sobrenome'] + ', ';
+  }
+}
+console.log(moradores1);
+
+let moradores2 = "Moradores Bloco 2: "
+
+for (let i = 0; i < moradores['blocoDois'].length; i += 1) {
+  if (i == (moradores['blocoDois'].length - 1)) {
+    moradores2 += moradores['blocoDois'][i]['nome'] + ' ' + moradores['blocoDois'][i]['sobrenome'] + '.';
+  } else {
+    moradores2 += moradores['blocoDois'][i]['nome'] + ' ' + moradores['blocoDois'][i]['sobrenome'] + ', ';
+  }
+}
+console.log(moradores2);
