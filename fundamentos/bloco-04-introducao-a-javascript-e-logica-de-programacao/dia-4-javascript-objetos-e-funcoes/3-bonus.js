@@ -1,4 +1,35 @@
 // 1 - (Difícil) Faça um programa que receba uma string em algarismos romanos e retorne o número que a string representa.
+function conversorRomano(stringRomanos) {
+  const romanos = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000
+  }
+
+let resultado = 0;
+
+for (let i = 0; i < stringRomanos.length; i += 1) {
+  if (romanos[stringRomanos[i]] < romanos[stringRomanos[i + 1]]) {
+    resultado -= parseInt(romanos[stringRomanos[i]])
+  } else {
+    resultado += parseInt(romanos[stringRomanos[i]])
+  }
+}
+console.log(romanos[stringRomanos[2]]);
+console.log(resultado);
+}
+
+// testes:
+conversorRomano('IX');
+conversorRomano('XI');
+conversorRomano('CM');
+conversorRomano('XC');
+conversorRomano('M');
+
 
 // 2 - Crie uma função chamada arrayOfNumbers que receberá a variável vector como parâmetro. Através de um loop for , percorra essa variável, busque os números pares e os adicione a um novo array que deverá ser retornado ao final pela pela função.
 
