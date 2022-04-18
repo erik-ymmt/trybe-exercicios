@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main id="paiDoPai">
+        <section id="pai">
+          <section id="primeiroFilho"></section>
+          <section id="elementoOndeVoceEsta">
+            <section id="primeiroFilhoDoFilho"></section>
+            <section id="segundoEUltimoFilhoDoFilho"></section>
+          </section>
+          Atenção!
+          <section id="terceiroFilho"></section>
+          <section id="quartoEUltimoFilho"></section>
+        </section>
+      </main>
+      <script>
+
+        // Acesse o elemento elementoOndeVoceEsta.
+        console.log(document.getElementById('elementoOndeVoceEsta'));
+
+        // Acesse pai a partir de elementoOndeVoceEsta e adicione uma color a ele.
+        const pai = document.getElementById('elementoOndeVoceEsta').parentElement;
+        pai.style.color = 'blue';
+
+        // Acesse o primeiroFilhoDoFilho e adicione um texto a ele.
+        const primeiroFilho = document.getElementById('primeiroFilhoDoFilho');
+        primeiroFilho.innerText = 'Primogênito';
+
+        // Acesse o primeiroFilho a partir de pai.
+        console.log(document.getElementById('pai').firstElementChild);
+
+        // Agora acesse o primeiroFilho a partir de elementoOndeVoceEsta .
+        console.log(document.getElementById('elementoOndeVoceEsta').previousElementSibling);
+
+        // Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta .
+        console.log(document.getElementById('elementoOndeVoceEsta').nextSibling);
+
+        // Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta .
+        console.log(document.getElementById('elementoOndeVoceEsta').nextSibling.nextSibling);
+
+        // Agora acesse o terceiroFilho a partir de pai .
+        console.log(document.getElementById('pai').lastElementChild.previousElementSibling);
+
+        // Crie um irmão para elementoOndeVoceEsta .
+        const dad = document.getElementById('pai');
+        const element = document.createElement('section');
+        element.innerText = 'Criando elementos';
+        dad.appendChild(element);
+
+        // Crie um filho para elementoOndeVoceEsta .
+        const maisUmFilho = document.getElementById('elementoOndeVoceEsta');
+        const element2 = document.createElement('section');
+        element2.innerText = 'Criando elementos 2';
+        maisUmFilho.appendChild(element2);
+
+        // Crie um filho para primeiroFilhoDoFilho .
+        const maisUmFilho2 = document.getElementById('primeiroFilhoDoFilho');
+        const element3 = document.createElement('section');
+        element3.innerText = 'Criando elementos 3';
+        maisUmFilho2.appendChild(element3);
+
+        // A partir desse filho criado, acesse terceiroFilho .
+        element3.className = 'novo-filho';
+        const novoFilho = document.getElementsByClassName('novo-filho')[0];
+        console.log(novoFilho.parentElement.parentElement.nextSibling.nextSibling);
+
+        // Remova todos os elementos filhos de paiDoPai exceto pai , elementoOndeVoceEsta e primeiroFilhoDoFilho.
+        const paiDoPai = document.getElementById('paiDoPai');
+        
+        const sections = document.querySelectorAll('section')
+        console.log(sections.length);
+        console.log(sections);
+      
+        for (let i = 0; i < sections.length; i+= 1) {
+          if (sections[i].outerHTML.includes('pai') || sections[i].outerHTML.includes('elementoOnde') || sections[i].outerHTML.includes('primeiroFilhoDoFilho')) {
+            console.log('hi!')
+        } else {
+          sections[i].remove()
+        }
+        }
+
+      </script>
+</body>
+</html>

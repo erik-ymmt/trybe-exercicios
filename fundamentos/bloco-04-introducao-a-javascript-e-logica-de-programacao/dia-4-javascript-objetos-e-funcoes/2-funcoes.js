@@ -83,19 +83,62 @@ function maiorN (array) {
 console.log(maiorN(arrayDeNomes));
 
 //5 - Crie uma função que receba um array de inteiros e retorne o inteiro que mais se repete.
-let arrayRepete = [2, 3, 2, 5, 8, 2, 3];
+let listaContagem = {};
 
-let contagem = {};
-
-function addContagem (numeroDoArray) {
-    let repeticao = 0;
-    let numeroRepetido;
-    
-    
-    if (numeroDoArray === numeroRepetido) {
-            repeticao += 1;
+function retornaOqMaisRepete (array) {
+    for (numbers of array) {
+        let contagem = 0;
+        for (numbers2 of array) {
+            if (numbers == numbers2) {
+                contagem += 1;
+            }
         }
-    }    
+        listaContagem[numbers] = contagem
+    }
+    console.log(listaContagem);
 
-arrayRepete.forEach(addContagem);
-console.log(contagem);
+    let maisRepetido;
+    let contagemDoMaisRep = 0;
+
+    for (let keys in listaContagem) {
+        if (parseInt(listaContagem[keys]) > contagemDoMaisRep) {
+            contagemDoMaisRep = listaContagem[keys];
+            maisRepetido = keys;
+        }
+    }
+    console.log(`O mais repetido é o ${maisRepetido}, ele se repete ${contagemDoMaisRep} vezes`);
+}
+retornaOqMaisRepete([2, 3, 2, 5, 8, 2, 3, 3, 3]);
+
+// 6 - Crie uma função que receba um número natural (número inteiro não negativo) N e retorne o somatório de todos os números de 1 até N.
+function somatorio(numNatural) {
+    let soma = 0;
+    for (let i = 1; i <= numNatural; i += 1) {
+        soma += i;
+    }
+    return soma;
+}
+
+console.log(somatorio(5));
+
+// 7 - Crie uma função que receba uma string word e outra string ending . Verifique se a string ending é o final da string word . Considere que a string ending sempre será menor que a string word.
+
+function checagem(word, ending) {
+    const splitWord = word.split('');
+    const splitEnding = ending.split('');
+    const diferenca = word.length - ending.length
+
+    let contagem = 0
+    for (i = ending.length - 1; i >= 0; i -= 1) {
+        if (splitWord[(i + diferenca)] === splitEnding[i]) {
+            contagem += 1;
+        }
+    }
+    if (contagem === ending.length) {
+        console.log(true);
+    } else {
+        console.log(false);
+    }
+}
+
+checagem('trybe', 'br');
