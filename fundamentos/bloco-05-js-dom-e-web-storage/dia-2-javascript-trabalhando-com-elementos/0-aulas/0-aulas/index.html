@@ -74,28 +74,16 @@
         const paiDoPai = document.getElementById('paiDoPai');
         
         const sections = document.querySelectorAll('section')
+        console.log(sections.length);
         console.log(sections);
-
-        if (sections[i].includes('elementoOnde')) {
-
+      
+        for (let i = 0; i < sections.length; i+= 1) {
+          if (sections[i].outerHTML.includes('pai') || sections[i].outerHTML.includes('elementoOnde') || sections[i].outerHTML.includes('primeiroFilhoDoFilho')) {
+            console.log('hi!')
         } else {
-          
+          sections[i].remove()
         }
-
-
-
-
-
-
-
-        // const remover = paiDoPai.firstElementChild.lastElementChild.previousElementSibling;
-        // const remover2 = paiDoPai.firstElementChild.lastElementChild;
-
-        // paiDoPai.firstElementChild.removeChild(remover);
-        // paiDoPai.firstElementChild.removeChild(remover2);
-
-
-        // console.log(paiDoPai.childNodes);
+        }
 
       </script>
 </body>
