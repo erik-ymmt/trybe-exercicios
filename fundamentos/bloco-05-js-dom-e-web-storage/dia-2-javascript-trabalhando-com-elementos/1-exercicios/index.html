@@ -57,27 +57,46 @@
   </head>
   <body>
     <script>
-// Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
+// 1.Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
 const elementBody = document.getElementsByTagName('body');
 const createH1 = document.createElement('h1');
 createH1.innerText = 'Exercício 5.2 - JavaScript DOM';
 elementBody[0].appendChild(createH1);
 
-// Adicione a tag main com a classe main-content como filho da tag body ;
+// 2.Adicione a tag main com a classe main-content como filho da tag body ;
+const createMain = document.createElement('main');
+elementBody[0].appendChild(createMain);
 
-// Adicione a tag section com a classe center-content como filho da tag main criada no passo 2;
+// 3.Adicione a tag section com a classe center-content como filho da tag main criada no passo 2;
+const createSection = document.createElement('section');
+document.getElementsByTagName('main')[0].appendChild(createSection);
+document.querySelector('section').className = 'center-content';
 
-// Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;
+// 4.Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;
+const createP = document.createElement('p');
+document.getElementsByClassName('center-content')[0].appendChild(createP);
+document.getElementsByTagName('p')[0].innerText = 'Hello, Floripa!';
 
-// Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;
+// 5.Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;
+const createSection2 = document.createElement('section');
+document.getElementsByTagName('main')[0].appendChild(createSection2);
+document.querySelector('section').nextSibling.className = 'left-content';
 
-// Adicione a tag section com a classe right-content como filho da tag main criada no passo 2;
+// 6.Adicione a tag section com a classe right-content como filho da tag main criada no passo 2;
+const createSection3 = document.createElement('section');
+document.getElementsByTagName('main')[0].appendChild(createSection3);
+document.querySelector('section').nextSibling.nextSibling.className = 'right-content';
 
-// Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do section criado no passo 5;
+// 7.Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do section criado no passo 5;
+const createImg = document.createElement('img');
+document.getElementsByClassName('left-content')[0].appendChild(createImg);
+console.log(document.getElementsByTagName('img').innerHTML)
 
-// Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+//como acrescenta o link?
 
-// Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
+// 8.Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+
+// 9.Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
 
     </script>
   </body>
