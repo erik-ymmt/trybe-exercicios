@@ -28,7 +28,7 @@ for (let i = 0; i < dezDaysList.length; i += 1) {
     createLi.innerText = dezDaysList[i];
     createLi.className = 'day';
     if (dezDaysList[i] == 24 || dezDaysList[i] == 25 || dezDaysList[i] == 31) {
-        createLi.className = 'holiday';
+        createLi.classList.add('holiday');
     }
     if (dezDaysList[i] == 4 || dezDaysList[i] == 11 || dezDaysList[i] == 18 || dezDaysList[i] == 25) {
         createLi.classList.add('day-friday');
@@ -76,4 +76,58 @@ function clickHoliday() {
 
 clickHoliday()
 
+// Exercício 4:
+// Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente um botão com o nome "Sexta-feira".
+// Adicione a este botão o ID "btn-friday" .
+// Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
+
+// A função já havia criado, só chamei ela com outro parâmentro para a ID:
 createButton('Sexta-Feira', 'btn-friday');
+
+// Exercício 5:
+// Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click" que modifica o texto exibido nos dias que são Sexta-feira.
+// É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial exibindo os dias.
+
+function clickFriday() {
+
+    document.getElementById('btn-friday').addEventListener('click', function () {
+        const holidays = document.querySelectorAll('.day-friday');
+        for (let i = 0; i < holidays.length; i += 1) {
+            if (holidays[i].style.backgroundColor === 'green') {
+                holidays[i].style.backgroundColor = '#eee';
+                holidays[i].style.color = '#777';
+            } else {
+                holidays[i].style.backgroundColor = 'green';
+                holidays[i].style.color = 'white';
+            }
+        }
+    })
+}
+
+clickFriday()
+
+// Exercício 6:
+// Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.
+
+const day = document.querySelectorAll('.day');
+
+function dayZoomIn() {
+    for (let i = 0; i < day.length; i += 1) {
+        day[i].addEventListener('mouseover', function (event) {
+            event.target.style.fontSize = '1.75em';
+            console.log(event.target)
+        });
+    }
+}
+
+function dayZoomOut() {
+    for (let i = 0; i < day.length; i += 1) {
+        day[i].addEventListener('mouseleave', function (event) {
+            event.target.style.fontSize = '1em';
+            console.log(event.target)
+        });
+    }     
+}
+
+dayZoomIn();
+dayZoomOut();
