@@ -109,13 +109,15 @@ clickFriday()
 // Exercício 6:
 // Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.
 
+
 const day = document.querySelectorAll('.day');
 
 function dayZoomIn() {
     for (let i = 0; i < day.length; i += 1) {
         day[i].addEventListener('mouseover', function (event) {
-            event.target.style.fontSize = '1.75em';
-            console.log(event.target)
+            // Passei a usar o transform conforme referência do código do Arthur Vianna, 
+            // pois o font size estava movendo toda a linha, não somente dando zoom.
+            event.target.style.transform = 'scale(1.5)';
         });
     }
 }
@@ -123,11 +125,94 @@ function dayZoomIn() {
 function dayZoomOut() {
     for (let i = 0; i < day.length; i += 1) {
         day[i].addEventListener('mouseleave', function (event) {
-            event.target.style.fontSize = '1em';
-            console.log(event.target)
+            event.target.style.transform = 'scale(1.0)';
         });
     }     
 }
 
 dayZoomIn();
 dayZoomOut();
+
+// Exercício 7:
+// Implemente uma função que adiciona uma tarefa personalizada ao calendário. A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar") e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
+// O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks" .
+
+const myTasks = document.querySelector('.my-tasks')
+
+function newTask(taskName) {
+    const createNewTask = document.createElement('span');
+    createNewTask.innerHTML = taskName; // + '<br>';
+    myTasks.appendChild(createNewTask);
+}
+
+newTask('estudar')
+
+// Exercício 8:
+// Implemente uma função que adiciona uma legenda com cor para a tarefa criada no exercício anterior. Esta função deverá receber como parâmetro uma string ("cor") e criar dinamicamente um elemento de tag <div> com a classe task .
+// O parâmetro cor deverá ser utilizado como cor de fundo da <div> criada.
+// O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks" .
+
+function legenda(corDaLegenda) {
+    const criaLegenda = document.createElement('div');
+    criaLegenda.style.backgroundColor = corDaLegenda;
+    criaLegenda.style.opacity = 0.5;
+    document.querySelector('.my-tasks').appendChild(criaLegenda);
+}
+
+legenda('red');
+
+// Exercício 9:
+// Implemente uma função que adiciona um evento que, ao clicar no elemento com a tag <div> referente a cor da sua tarefa, atribua a este elemento a classe task selected , ou seja, quando sua tarefa possuir a classe task selected , ela estará selecionada.
+// Ao clicar novamente no elemento, a sua classe deverá voltar a ser somente task , ou seja, esta tarefa está deixando de ser uma tarefa selecionada.
+
+const buttonLegenda = document.querySelector('.my-tasks div');
+
+function selectTask() {
+    buttonLegenda.addEventListener('click', function () {
+        if (buttonLegenda.className == 'task-selected') {
+            buttonLegenda.className = 'task';
+            buttonLegenda.style.opacity = 0.5;
+            
+        } else {
+            buttonLegenda.className = 'task-selected';
+            buttonLegenda.style.opacity = 1;
+            
+        }
+    })
+}
+
+selectTask()
+
+// Exercício 10:
+// Implemente uma função que adiciona um evento que, ao clicar em um dia do mês no calendário, atribua a este dia a cor da legenda da sua tarefa selecionada.
+// Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119) .
+
+
+function taskDay() {
+    let selectedColor = document.querySelectorAll('.task-selected');
+        
+        document.querySelector('#days').addEventListener('click', function (event) {
+            if (selectedColor.length > 0) { //não consegui fazer isso true
+                event.target.style.color = selectedColor[0].style.backgroundColor;
+                console.log('teste TRUE') 
+            }
+            console.log(event.target.style.color = selectedColor[0].style.backgroundColor)
+        });
+}
+
+taskDay();
+
+
+// function taskDay() {
+//     const selectedColor = document.querySelectorAll('.task-selected');
+//     if (selectedColor.length > 0) {
+//         for (let i = 0; i < day.length; i += 1) {
+//             day[i].addEventListener('click', function (event) {
+//                 event.target.style.color = selectedColor[0].style.backgroundColor;
+//                 console.log(event.target)
+//             });
+//         }
+//     }
+// }
+
+// taskDay();
