@@ -8,22 +8,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2 id="h2">Lorem Ipsum</h2>
+    <h2 >Lorem Ipsum</h2>
     <article>
         <h3>Whats is Lorem</h3>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
     </article>
     <div>
-        <h3>Settings</h3>
+        <h3 id="settings">Settings</h3>
         <form class="form">
             <label for="bg-color">Background Color:</label>
-            <input type="text" id="bg-color" name="bg-color">
+            <input type="text" id="bg-color" name="bg-color" placeholder="color name e.g.: red">
             <br>
             <label for="tx-color">Text Color:</label>
-            <input type="text" id="tx-color" name="tx-color">
+            <input type="text" id="tx-color" name="tx-color" placeholder="color name e.g.: blue">
+            <br>
+            <label for="font-size">Font Size:</label>
+            <input type="text" id="font-size" name="ont-size" placeholder="number with unit e.g.: 20px">
+            <br>
+            <label for="line-height">Line Height:</label>
+            <input type="text" id="line-height" name="line-height" placeholder="number with unit e.g.: 20px">
+            <br>
+            <label for="font-family">Font Family:</label>
+            <input type="text" id="font-family" name="font-family" placeholder="font name e.g.: sans-serif"> 
         </form>
     </div>
     <button id="clear">Clear Local Storage</button>
+    <button id="reset">Reset (Recommended Settings)</button>
     <script src="script.js"></script>
 </body>
 </html>
