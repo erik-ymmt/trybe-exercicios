@@ -1,0 +1,21 @@
+body {
+    background-color: grey;
+    color: white;
+    font-size: medium;
+    line-height: normal;
+    font-family: sans-serif;
+}
+
+.form {
+    text-align: right;
+    margin-right: 70%;
+}
+
+#clear {
+    margin-top: 15px;
+    margin-left: 15%;
+}
+
+#settings {
+    margin-left: 22%;
+}
