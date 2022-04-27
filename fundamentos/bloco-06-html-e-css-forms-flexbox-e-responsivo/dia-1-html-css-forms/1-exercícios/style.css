@@ -1,0 +1,61 @@
+:root {
+  --standard-background: rgba(255, 255, 255, 0.5);
+}
+
+/* Exercitando variáveis no CCS, referência: https://desenvolvimentoparaweb.com/css/variaveis-css-guia-pratico/, dica do colega Arthur Vianna */
+
+body {
+  background-color: gray;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(25, 25, 25);
+  background-color: var(--standard-background);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.300);
+  padding: 10px 15px;
+  border-radius: 5px;
+  width: 80%;
+  margin: 15px auto;
+}
+
+form {
+  background-color: var(--standard-background);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.300);
+  padding: 10px 15px;
+  border-radius: 5px;
+  width: 80%;
+  margin: auto;
+}
+
+legend {
+  margin-top: 15px;
+}
+
+#answer-container {
+  margin-top: 15px;
+}
+
+input {
+  margin: 5px;
+  border: 0px;
+  padding: 3px;
+}
+
+button {
+  margin-top: 15px;
+  width: 150px;
+  font-size: large;
+  border-radius: 3px;
+  border: 0px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+button[type="submit"] {
+  background-color: rgba(247, 255, 247, 0.5);
+}
+
+#clear {
+  background-color: rgba(255, 204, 204, 0.5);
+}

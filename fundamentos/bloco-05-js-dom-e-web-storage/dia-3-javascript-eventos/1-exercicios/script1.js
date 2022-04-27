@@ -160,7 +160,7 @@ function legenda(corDaLegenda) {
     document.querySelector('.my-tasks').appendChild(criaLegenda);
 }
 
-legenda('blue');
+legenda('red');
 
 // Exercício 9:
 // Implemente uma função que adiciona um evento que, ao clicar no elemento com a tag <div> referente a cor da sua tarefa, atribua a este elemento a classe task selected , ou seja, quando sua tarefa possuir a classe task selected , ela estará selecionada.
@@ -170,13 +170,14 @@ const buttonLegenda = document.querySelector('.my-tasks div');
 
 function selectTask() {
     buttonLegenda.addEventListener('click', function () {
-        if (buttonLegenda.className == 'task-selected') {
+        if (buttonLegenda.className == 'task selected') {
             buttonLegenda.className = 'task';
             buttonLegenda.style.opacity = 0.5;
             
         } else {
-            buttonLegenda.className = 'task-selected';
+            buttonLegenda.className = 'task selected';
             buttonLegenda.style.opacity = 1;
+            //sessionStorage.setItem('task-color', document.querySelectorAll('.task selected')[0].style.backgroundColor)
             
         }
     })
@@ -188,54 +189,42 @@ selectTask()
 // Implemente uma função que adiciona um evento que, ao clicar em um dia do mês no calendário, atribua a este dia a cor da legenda da sua tarefa selecionada.
 // Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119) .
 
+function setDayColor() {
+    let selectedTask = document.getElementsByClassName('task selected');//
+    let days = document.querySelector('#days');//
+    let taskDiv = document.querySelector('.task');
+    let taskColor = taskDiv.style.backgroundColor;
+    
+    days.addEventListener('click', function(event){
+      let eventTargetColor = event.target.style.color;
+      if (selectedTask.length > 0 && eventTargetColor !== taskColor) {
+        let color = selectedTask[0].style.backgroundColor;
+        event.target.style.color = color;
+      } else if (eventTargetColor === taskColor && selectedTask.length !== 0) {
+        event.target.style.color = 'rgb(119,119,119)';
+      }
+    });
+  };
+  
+  setDayColor();
 
-function taskDay() {   
+
+/*
+
+function taskDay() {
+    let selectedColor = document.querySelectorAll('.task-selected');
+        
         document.querySelector('#days').addEventListener('click', function (event) {
-        const selectedColor = document.querySelectorAll('.task-selected');
-        const sLength = selectedColor.length;
-        let evento = event.target.style;
-            if (sLength > 0 && evento.color != selectedColor[0].style.backgroundColor) {
-                let evento = event.target.style;
-                evento.color = selectedColor[0].style.backgroundColor;
-            } else {
-                evento.color = 'rgb(119,119,119)';
+            if (selectedColor.length > 0) { //não consegui fazer isso true
+                event.target.style.color = sessionStorage.getItem('task-color');
+                console.log('teste TRUE') 
             }
+            console.log(event.target.style.color = sessionStorage.getItem('task-color'))
         });
 }
 
 taskDay();
-
-
-// function taskDay() {
-//     //let selectedColor = document.querySelectorAll('.task-selected'); //(erro)
-//     let selectedColor2 = document.getElementsByClassName('task-selected');  //(certo)
-//         document.querySelector('#days').addEventListener('click', function (event) {
-            
-//             //console.log(typeof sLength);
-//             //console.log(sLength);
-//             let selectedColor = document.querySelectorAll('.task-selected'); //(erro)
-//             //let selectedColor2 = document.getElementsByClassName('task-selected');  //(certo)
-//             console.log(selectedColor[0]);
-//             console.log(selectedColor2[0]);
-            
-//             let sLength = selectedColor.length;
-//             let sLength2 = selectedColor2.length;
-
-//             console.log(sLength);
-//             console.log(sLength2);
-
-
-//             if (sLength > 0) { //não consegui fazer isso true com querySelector
-//                 console.log('deu bom') 
-//             } else {
-//                 console.log('erro');
-//             }
-              
-//         });
-// }
-
-// taskDay();
-
+*/
 
 // function taskDay() {
 //     const selectedColor = document.querySelectorAll('.task-selected');
