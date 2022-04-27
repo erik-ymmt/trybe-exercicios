@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>TrybeTrip</h1>
+  <form action="" method="post">
+    <label for="input-name">Nome:</label>
+    <input type="text" name="name" id="input-name" autocomplete="off" minlength="10" maxlength="40">
+    <br>
+
+    <label for="input-email">Email:</label>
+    <input type="email" name="email" id="input-email" autocomplete="off" minlength="10" maxlength="50">
+    <br>
+
+    <legend>Destino preferido:</legend>
+    <input type="radio" name="opcao" id="fn">Fernando de Noronha
+    <input type="radio" name="opcao" id="pg">Porto de Galinhas
+    <input type="radio" name="opcao" id="fl">Florianópolis
+    <input type="radio" name="opcao" id="sp">São Paulo
+    <br>
+
+    <div id="answer-container">
+      <label for="input-textarea">Resposta:</label>
+      <br>
+      <textarea name="answer" id="input-textarea" maxlength="500" cols="30" rows="10"></textarea>
+    </div>
+    <br>
+
+    <label for="date">Melhor data de início da viagem:</label>
+    <br>
+    <input type="date" name="date" id="date">
+    <br>
+
+    <legend>Termos e Regras</legend>
+    <input type="checkbox" name="term1" id="term1">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
+    <br>
+    <input type="checkbox" name="term2" id="term2">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
+    <br>
+
+    <button type="submit" id="submit-button">Enviar</button>
+    <button type="reset" id="clear">Apagar</button>
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>
