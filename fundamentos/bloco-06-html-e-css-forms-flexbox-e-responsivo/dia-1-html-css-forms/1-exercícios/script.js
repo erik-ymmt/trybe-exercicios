@@ -10,18 +10,16 @@ submitButton.addEventListener('click', function (event) {
   const imgRightsCheckbox = document.getElementById('term2');
   let errorVerificator = false;
 
-  if (nameInput.length < 10 || nameInput > 40) {
-    alert('Nome inválido, deve conter de 10 a 40 caracteres');
+function validateCharLength(input, min, max, inputLabel) {
+  if (input.length < min || input.length > max) {
+    alert(`${inputLabel} inválido, deve conter de ${min} a ${max} caracteres`);
     errorVerificator = true;
   }
-  if (emailInput.length < 10 || emailInput > 50) {
-    alert('Email inválido, deve conter de 10 a 50 caracteres');
-    errorVerificator = true;
-  }
-  if (textInput.length > 500) {
-    alert(`Resposta inválida, deve conter até 500 caracteres. Número de caracteres atual: ${textInput.length}`);
-    errorVerificator = true;
-  }
+}
+
+validateCharLength(nameInput, 10, 40, 'Nome');
+validateCharLength(emailInput, 10, 50, 'Email');
+validateCharLength(textInput, 0, 500, 'Resposta');
 
   if (imgRightsCheckbox.checked === false) {
     alert('Por favor, aceite os termos de imagem.')

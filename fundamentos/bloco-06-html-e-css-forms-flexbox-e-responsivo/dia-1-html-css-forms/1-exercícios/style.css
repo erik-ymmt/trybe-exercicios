@@ -1,3 +1,9 @@
+:root {
+  --standard-background: rgba(255, 255, 255, 0.5);
+}
+
+/* Exercitando variáveis no CCS, referência: https://desenvolvimentoparaweb.com/css/variaveis-css-guia-pratico/, dica do colega Arthur Vianna */
+
 body {
   background-color: gray;
   font-family: 'Courier New', Courier, monospace;
@@ -6,7 +12,7 @@ body {
 h1 {
   text-align: center;
   color: rgb(25, 25, 25);
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--standard-background);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.300);
   padding: 10px 15px;
   border-radius: 5px;
@@ -15,7 +21,7 @@ h1 {
 }
 
 form {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--standard-background);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.300);
   padding: 10px 15px;
   border-radius: 5px;
