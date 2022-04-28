@@ -29,3 +29,14 @@ validateCharLength(textInput, 0, 500, 'Resposta');
     alert('Dados enviados com sucesso! Obrigado por participar do concurso TrybeTrip.')
   }  
 });
+
+window.addEventListener('DOMContentLoaded', function() {
+  const datePicker = document.getElementById('datepicker');
+
+  datePicker.DatePickerX.init({
+    format: 'dd/mm/yyyy'
+  });
+      clearButton: false
+  });
+
+  // Referência: https://github.com/AlexKrupko/DatePickerX
