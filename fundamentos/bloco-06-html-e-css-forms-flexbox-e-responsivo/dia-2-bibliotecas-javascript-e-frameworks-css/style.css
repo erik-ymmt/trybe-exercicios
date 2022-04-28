@@ -1,0 +1,37 @@
+body {
+  background-size: cover;
+  background-image: url(https://www.dicasdeviagem.com/wp-content/uploads/2022/01/baia-dos-porcos-noronha.jpg.webp);
+}
+
+/* Referência: https://www.dicasdeviagem.com/fernando-de-noronha/ */
+
+h1 {
+  text-align: center;
+  margin-top: 15px;
+}
+
+form {
+  margin-bottom: 15px;
+}
+
+form, h1 {
+  background-color: rgba(255, 255, 255, 0.800);
+  border-radius: 5px;
+  padding: 15px 15px;
+  width: 80%;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+input[type="date"] {
+  width: 150px;
+}
+
+button {
+  margin-top: 15px;
+}
+
+footer {
+  background-color: rgba(255, 255, 255, 0.800);
+  text-align: center;
+  padding: 5px;
+}
