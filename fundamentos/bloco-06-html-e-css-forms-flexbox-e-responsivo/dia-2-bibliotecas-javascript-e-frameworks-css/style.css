@@ -8,23 +8,23 @@ body {
 h1 {
   text-align: center;
   margin-top: 15px;
+  font-size: 30px;
 }
 
 form {
-  margin-bottom: 15px;
+  margin-bottom: 100px;
 }
 
-form, h1 {
+#form, #title {
   background-color: rgba(255, 255, 255, 0.800);
   border-radius: 5px;
-  padding: 15px 15px;
-  width: 80%;
+  padding: 15px 25px;
+  width: 50%;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
 
 #datepicker {
   width: 150px;
-  margin-bottom: 25px;
 }
 
 button {
@@ -32,7 +32,14 @@ button {
 }
 
 footer {
-  background-color: rgba(255, 255, 255, 0.800);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
   text-align: center;
-  padding: 5px;
+  padding: 3px;
+}
+
+#terms {
+  margin-top: 25px;
 }
