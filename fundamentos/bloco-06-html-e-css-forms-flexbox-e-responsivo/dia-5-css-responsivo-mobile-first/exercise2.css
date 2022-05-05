@@ -22,6 +22,7 @@ aside {
 header {
   background-color: rgb(64, 0, 0);
   color:aliceblue;
+  width: 100%;
 }
 
 nav {
@@ -47,7 +48,7 @@ header p {
   text-align: center;
   margin: 0;
   padding: 10px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .aside-one, .aside-two {
@@ -80,11 +81,11 @@ hr {
 article {
   background-image: url(https://thumbs.dreamstime.com/b/paper-texture-white-watercolor-paper-texture-background-paper-texture-white-watercolor-paper-texture-background-high-resolution-156813309.jpg);
   margin: 10px;
-  padding: 0px 20px;
+  padding: 0px 20px 20px;
+  max-width: 700px;
 }
 
 article h1 {
-  padding-top: 20px;
   text-align: center;
 }
 
@@ -93,14 +94,50 @@ article p {
   text-align: justify;
 }
 
-footer {
-  margin: 15px;
+.article-content {
+  display: flex;
+  justify-content: center;
 }
 
-@media screen and (min-width:600px) {
-  
+footer {
+  margin: 15px;
+  text-align: center;
+}
+
+@media screen and (min-width:800px) {
+  .body-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .aside-container {
+    display: flex;
+    justify-content: space-around;
+    width: 700px;
+  }
+  hr {
+    display: none;
+  }
+  .aside-two {
+    margin-top: 0px;
+  }
 }
 
 @media screen and (min-width:1200px) {
-  
+  .main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .aside-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 330px;
+    order: 1;
+  }
+  footer {
+    width: 50%;
+  }
 }
