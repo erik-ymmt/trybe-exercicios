@@ -15,8 +15,9 @@ body {
   font-size: 1.1rem;
 }
 
-article {
-
+article p {
+  text-align: justify;
+  margin: 0px;
 }
 
 h1 {
@@ -28,8 +29,9 @@ h2 {
 }
 
 img {
-	max-width: 100%;
+	width: 100%;
   margin-top: 15px;
+  border: 1px solid black;
 }
 
 main {
@@ -37,13 +39,54 @@ main {
 }
 
 section {
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 figure {
 	margin: 0;
+  width: 80%;
 }
 
 figcaption {
   font-size: .8em;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    background-color: rgb(240, 240, 238);
+    font-size: 1rem;
+  }
+
+  article {
+    column-count: 2;
+  }
+
+  figure {
+    width: 45%;
+    margin: 5px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    background-color: rgb(255, 255, 215);
+    font-size: 1rem;
+    margin: 3% 5%;
+    max-width: 1130px;
+  }
+
+  article {
+    column-count: 3;
+  }
+
+  figure {
+    width: 32%;
+    margin: 5px;
+  }
+
+  figcaption {
+    font-size: 1rem;
+  }
 }
