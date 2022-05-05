@@ -5,3 +5,73 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+aside, article {
+  margin: 0 5%;
+}
+
+header {
+  background-color: rgb(64, 0, 0);
+  color:aliceblue;
+}
+
+nav {
+  background-color: rgb(81, 44, 44);
+}
+
+header ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+header li {
+  list-style: none;
+  padding: 5px 35px;
+  font-size: 1.2rem;
+}
+
+header li:hover {
+  background-color: rgb(70, 4, 4);
+}
+
+header p {
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.aside-one {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.aside-one h2 {
+  width: 90%;
+  text-align: center;
+  margin: 15px 0 5px 0;
+}
+
+.aside-one ul {
+  list-style: none;
+  font-size: 1.1rem;
+}
+
+.aside-two {
+  margin-top: 15px;
+}
+
+
+@media screen and (min-width:600px) {
+  
+}
+
+@media screen and (min-width:1200px) {
+  
+}
