@@ -11,7 +11,11 @@ html {
   padding: 0px;
 }
 
-aside, article {
+body {
+  background-color: rgb(255, 248, 248);
+}
+
+aside {
   margin: 0 5%;
 }
 
@@ -46,19 +50,20 @@ header p {
   font-size: 1.2rem;
 }
 
-.aside-one {
+.aside-one, .aside-two {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
-.aside-one h2 {
+.aside-one h2, .aside-two h2 {
   width: 90%;
   text-align: center;
-  margin: 15px 0 5px 0;
+  margin: 10px 0 5px 0;
+  color: rgb(70, 4, 4);
 }
 
-.aside-one ul {
+.aside-one ul, .aside-two ul {
   list-style: none;
   font-size: 1.1rem;
 }
@@ -67,6 +72,30 @@ header p {
   margin-top: 15px;
 }
 
+hr {
+  width: 20%;
+  margin-top: 25px;
+}
+
+article {
+  background-image: url(https://thumbs.dreamstime.com/b/paper-texture-white-watercolor-paper-texture-background-paper-texture-white-watercolor-paper-texture-background-high-resolution-156813309.jpg);
+  margin: 10px;
+  padding: 0px 20px;
+}
+
+article h1 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+article p {
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
+footer {
+  margin: 15px;
+}
 
 @media screen and (min-width:600px) {
   
