@@ -34,10 +34,6 @@ img {
   border: 1px solid black;
 }
 
-main {
-
-}
-
 section {
   display: flex;
   flex-wrap: wrap;
