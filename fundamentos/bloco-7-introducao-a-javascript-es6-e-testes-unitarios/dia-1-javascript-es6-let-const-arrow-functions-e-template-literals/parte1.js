@@ -12,3 +12,12 @@ const testingScope = (escopo) => {
 }
 
 testingScope(false);
+
+//faça uma função que retorne o array oddsAndEvens em ordem crescente.
+const oddsAndEvens = [13, 3, 4, 10, 7, 2];
+const ordenator = (num1, num2) => num1 > num2 ? 1 : -1;
+const orderedArray = oddsAndEvens.sort(ordenator)
+console.log(orderedArray);
+
+// Referências:
+// https://www.w3schools.com/js/js_array_sort.asp
