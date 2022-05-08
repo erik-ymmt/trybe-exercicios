@@ -27,3 +27,37 @@ const longestWordInPhrase = (phrase) => {
 }
 
 console.log(longestWordInPhrase(exemple));
+
+// Função 1: Escreva uma função que vai receber uma string como parâmetro. Sua função deverá procurar pela letra x em uma string qualquer que você determinar e substituir pela string que você passou como parâmetro. Sua função deve retornar essa nova string.
+
+let stringExemple = 'Tryber x aqui!';
+
+const changeX = (username) => {
+ 
+  for (letter of stringExemple) {
+    if (letter === 'x') {
+      const splited = stringExemple.split(' x ');
+      let result = '';
+      for (let index = 0; index < splited.length - 1; index += 1) {
+        result += `${splited[index]} ${username} `
+      }
+      result += splited[splited.length - 1]
+      return result;
+    }
+  }
+}
+
+// Um array com escopo global, que é o escopo do arquivo JS, nesse caso, contendo cinco strings com suas principais skills.
+const skills = ['html', 'css', 'js', 'dom', 'outra'];
+const sortedSkills = skills.sort();
+
+const paragraph = `${changeX('Erik')}
+Minhas cinco principais habilidades são:
+  •${sortedSkills[0]}
+  •${sortedSkills[1]}
+  •${sortedSkills[2]}
+  •${sortedSkills[3]}
+  •${sortedSkills[4]}
+#goTrybe`;
+
+console.log(paragraph);
