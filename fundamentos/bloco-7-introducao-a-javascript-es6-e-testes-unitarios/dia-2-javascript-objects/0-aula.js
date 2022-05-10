@@ -40,9 +40,44 @@ const student2 = {
   Css: 'Ótimo',
   JavaScript: 'Ruim',
   SoftSkills: 'Ótimo',
-  Git: 'Bom', // chave adicionada
+  Git: 'Bom',
 };
 
 getStudentsSkills(student1);
 getStudentsSkills(student2);
 
+const países = {
+  França: 'Paris',
+  Brasil: 'Brasília',
+  Espanha: 'Madrid',
+  Portugal: 'Lisboa',
+};
+const pairKeyValue = Object.entries(países);
+console.log(pairKeyValue);
+
+// Object.assign
+const person = {
+  name: 'Roberto',
+};
+
+const lastName = {
+  lastName: 'Silva',
+};
+
+const clone = Object.assign(person, lastName);
+
+console.log(clone); // { name: 'Roberto', lastName: 'Silva' }
+console.log(person); // { name: 'Roberto', lastName: 'Silva' }
+
+clone.name = 'Maria';
+
+console.log('Mudando a propriedade name através do objeto clone')
+console.log(clone); // Output: { name: 'Maria', lastName: 'Silva' }
+console.log(person); // Output: { name: 'Maria', lastName: 'Silva' }
+console.log('--------------');
+
+person.lastName = 'Ferreira';
+
+console.log('Mudando a propriedade lastName através do objeto person');
+console.log(clone); // Output: { name: 'Maria', lastName: 'Ferreira' }
+console.log(person); // Output: { name: 'Maria', lastName: 'Ferreira' }

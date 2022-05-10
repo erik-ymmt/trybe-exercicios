@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Calculadora</title>
+</head>
+<body>
+  <p>Informe dois números para realizar a soma:</p>
+  <label for='value1'>Valor 1:</label>
+  <input type='text' id='value1'>
+  <label for='value2'>Valor 2:</label>
+  <input type='text' id='value2'>
+  <button id='button'>Somar</button>
+  <p id='result'></p>
+  <script>
+    // Priemira tentativa com uma função separada para o erro, funcionou, mas vou refatorar.
+    /*
+    const checkIfBlank = () => {
+      const value1 = document.getElementById('value1').value;
+      const value2 = document.getElementById('value2').value;
+      if (value1 === undefined || value2 === undefined || value1.length < 1 || value2.length < 1) {
+        throw new Error('Erro, por favor, especifique dois valores.')
+      }
+    }
+
+    const checkIfNumber = () => {
+      const value1 = document.getElementById('value1').value;
+      const value2 = document.getElementById('value2').value;
+      if (isNaN(value1) || isNaN(value2)) {
+        throw new Error('Erro, por favor, especifique dois valores numéricos.');
+      }
+    }
+
+    const errorChecking = (functionChecked) => {
+      try {
+        functionChecked();
+        return true;
+      } catch (error) {
+        document.getElementById('result').innerHTML = error.message;
+        document.getElementById('value1').value = '';
+        document.getElementById('value2').value = '';
+      }   
+    }
+
+    const sum = () => {
+      const value1 = document.getElementById('value1').value;
+      const value2 = document.getElementById('value2').value;
+      if(errorChecking(checkIfBlank) && errorChecking(checkIfNumber)) {
+        const result = parseInt(value1) + parseInt(value2);
+        document.getElementById('result').innerHTML = `Resultado: ${result}`;
+        document.getElementById('value1').value = '';
+        document.getElementById('value2').value = '';
+      }
+    }
+    */
+    const checkIfValid = (value1, value2) => {
+          if (isNaN(value1) || isNaN(value2)) {
+            throw new Error('Erro, por favor, especifique dois valores numéricos.');
+          }
+          if (value1.length < 1 || value2.length < 1) {
+            throw new Error('Erro, por favor, especifique dois valores.')
+          }
+        }
+
+    const sum = () => {
+      try {
+        const value1 = document.getElementById('value1').value;
+        const value2 = document.getElementById('value2').value;
+        checkIfValid(value1, value2);
+        const result = parseInt(value1) + parseInt(value2);
+        document.getElementById('result').innerHTML = `Resultado: ${result}`;
+      } catch (error) {
+        document.getElementById('result').innerHTML = error.message;
+      } finally {
+        document.getElementById('value1').value = '';
+        document.getElementById('value2').value = '';
+      }
+    }
+
+    window.onload = () => {
+      const button = document.getElementById('button');
+      button.addEventListener('click', sum);
+    }
+
+  </script>
+</body>
+</html>
