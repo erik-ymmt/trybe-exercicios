@@ -48,9 +48,7 @@ const orderModifier = (order, newName, newPrice) => {
       total: newPrice,
     }
   }
-
   Object.assign(order, orderModification);
-
   const pizzaValues = Object.keys(order.order.pizza);
 
   const newPrint = `Olá ${order.name}, o total do seu pedido de ${pizzaValues[0]}, ${pizzaValues[1]} e ${order.order.drinks.coke.type} é R$ ${order.payment.total},00`;
@@ -59,4 +57,3 @@ const orderModifier = (order, newName, newPrice) => {
 }
 
 orderModifier(order, 'Luiz Silva', 50);
-
