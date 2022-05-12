@@ -56,7 +56,7 @@ console.log(getKeyByIndex(lesson1, 1));
 
 // Crie uma função que verifique se o par (chave / valor) existe na função. Essa função deve possuir três parâmetros, sendo eles: o objeto, o nome da chave e o valor da chave.
 const verifyKeyValue = (object, key, value) => {
-  const arrayKeyValue = Object.entries(object);
+  // const arrayKeyValue = Object.entries(object);
   // Não deu:
   // if (arrayKeyValue.includes([ key, value ])) {
   //   return true;
@@ -72,3 +72,30 @@ const verifyKeyValue = (object, key, value) => {
 
 console.log(verifyKeyValue(lesson1, 'materia', 'Matemática'));
 console.log(verifyKeyValue(lesson1, 'materia', 'Física'));
+
+// Crie uma função para contar quantos estudantes assistiram às aulas de Matemática. Use o objeto allLessons.
+const mathStudents = () => {
+  return allLessons.lesson1['numeroEstudantes'] + allLessons.lesson3['numeroEstudantes']
+}
+console.log(mathStudents());
+
+// Crie uma função que deverá retornar um objeto que representa o relatório do professor ou professora, as aulas que ele ou ela ministrou e o número total de estudantes. Use o objeto allLessons.
+const createReport = (object, professor) => {
+  const objectKeys = Object.keys(object);
+  const report = {
+    professor: undefined,
+    aulas: [],
+    estudantes: 0,
+  };
+  for (let lesson of objectKeys) {
+    if((Object.values(object[lesson])).includes(professor)) {
+      report.professor = professor;
+      report.aulas.push(object[lesson]['materia']);
+      report.estudantes += object[lesson].numeroEstudantes;
+    };
+  }
+  return report;
+}
+
+
+console.log(createReport(allLessons, 'Maria Clara'));
