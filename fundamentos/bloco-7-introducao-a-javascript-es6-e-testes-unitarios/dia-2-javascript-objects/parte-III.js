@@ -97,5 +97,4 @@ const createReport = (object, professor) => {
   return report;
 }
 
-
 console.log(createReport(allLessons, 'Maria Clara'));
