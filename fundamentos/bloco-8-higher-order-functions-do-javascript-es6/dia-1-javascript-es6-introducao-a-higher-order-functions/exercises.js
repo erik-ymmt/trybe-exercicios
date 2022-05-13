@@ -2,14 +2,13 @@
 
 const registerNewEmployee = (fullName) => {
   const fullNameEmailFormat = fullName.split(' ').join('_').toLowerCase();
+  // foi visto em aula que poderia ser feito com o .replace(' ', '_');
   let employeeEmail = `${fullNameEmailFormat}@trybe.com`;
   return {
     nomeCompleto: fullName,
     email: employeeEmail,
   }
 }
-
-registerNewEmployee('Erik Yamamoto');
 
 const newEmployees = (func) => {
   const employees = {
@@ -40,5 +39,30 @@ console.log(miniLoteria(5, loteriaResult));
 // 3 - Crie uma HOF que receberá três parâmetros. O primeiro será um array de respostas corretas (Gabarito), o segundo será um array de respostas a serem verificadas (respostas da pessoa estudante) e o terceiro é uma função que checa se as respostas estão corretas e faz a contagem da pontuação final recebida pela pessoa estudante. Ao final a HOF deve retornar o total da contagem de respostas certas.
 // Quando a resposta for correta a contagem sobe 1 ponto, quando for incorreta desce 0.5 pontos, e quando não houver resposta ("N.A") não altera-se a contagem.
 
-// referências:
-// https://wsvincent.com/javascript-convert-array-to-string/#:~:text=How%20do%20you%20convert%20an,numbers%20or%20concatenate%20two%20strings.
+const RIGHT_ANSWERS = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
+const STUDENT_ANSWERS = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
+
+const checkAnswers = (correctAnswers, userAnswers) => {
+  let points = 0;
+  let correct = 0;
+  for (let index in correctAnswers) {
+    if (correctAnswers[index] === userAnswers[index]) {
+      points += 1;
+      correct += 1;
+    } 
+    if (userAnswers[index] !== 'N.A' && correctAnswers[index] !== userAnswers[index]) {
+      points -= 0.5;
+    }
+  }
+  return {
+    'nota': points,
+    'respostasCorretas': correct
+  };
+}
+
+const printGrade = (correctAnswers2, userAnswers2, func) => {
+  console.log(`A nota da pessoa estudante foi: ${func(correctAnswers2, userAnswers2)['nota']}.
+Foram respondidas corretamente ${func(correctAnswers2, userAnswers2)['respostasCorretas']} questões.`);
+}
+
+printGrade(RIGHT_ANSWERS, STUDENT_ANSWERS, checkAnswers);
