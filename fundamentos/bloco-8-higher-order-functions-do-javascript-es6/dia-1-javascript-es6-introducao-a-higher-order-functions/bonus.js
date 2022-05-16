@@ -30,15 +30,15 @@ const battleMembers = { mage, warrior, dragon };
 
 const dragonDamage = () => {
   return Math.floor(Math.random() * (dragon['strength'] + 1 - 15 )) + 15
-}
+};
 
 // 2 - Crie uma função que retorna o dano causado pelo warrior.
 // O dano será um número aleatório entre o valor do atributo strength (dano mínimo) e o valor de strength * weaponDmg (dano máximo).
 
 const warriorDamage = () => {
   const { strength, weaponDmg } = warrior;
-  return Math.floor(Math.random() * (strength * weaponDmg + 1 - strength) + strength
-}
+  return Math.floor(Math.random() * (strength * weaponDmg + 1 - strength) + strength)
+};
 
 // 3 - Crie uma função que retorna um objeto com duas chaves e dois valores contendo o dano e a mana gasta pelo mago em um turno.
 // O dano será um número aleatório entre o valor do atributo intelligence (dano mínimo) e o valor de intelligence * 2 (dano máximo).
