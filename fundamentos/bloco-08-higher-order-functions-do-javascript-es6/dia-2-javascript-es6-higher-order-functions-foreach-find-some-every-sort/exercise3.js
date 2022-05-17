@@ -1,4 +1,4 @@
-const arr = [
+const books = [
   {
     id: 1,
     name: 'As Crônicas de Gelo e Fogo',
@@ -61,8 +61,10 @@ const arr = [
   },
 ];
 
-// Adicione o código do exercício aqui:
-// 1 - Encontre o nome da primeira pessoa autora do livro nascida no ano de 1947.
 
-const findAuthorByYear = arr.find((item) => item['author']['birthYear'] === 1947);
-console.log(findAuthorByYear['author']['name']);
+// 3 - Encontre o primeiro livro cujo nome possui 26 caracteres.
+function getNamedBook(arr) {
+  return arr.find((element) => element.name.length === 26);
+}
+
+console.log(getNamedBook(books));
