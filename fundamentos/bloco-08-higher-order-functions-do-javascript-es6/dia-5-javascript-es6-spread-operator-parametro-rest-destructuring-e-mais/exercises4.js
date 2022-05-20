@@ -44,5 +44,3 @@ function filterPeople(arr) {
   }, []);
 }
 console.log(filterPeople(people));
-
-
