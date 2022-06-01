@@ -38,8 +38,8 @@ const print = (err, msg) => {
   console.log(msg);
 }
 
-getPokemonDetails(filter('Squirtle'), print);
+// getPokemonDetails(filter('Squirtle'), print);
 
 module.exports = {
-  getPokemonDetails,
+  getPokemonDetails, filter, print, pokemons
 };
