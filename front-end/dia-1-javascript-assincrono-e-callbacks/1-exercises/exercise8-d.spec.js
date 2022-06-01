@@ -1,4 +1,4 @@
-const { getPokemonDetails } = require("./exercise8");
+const { getPokemonDetails } = require("./exercise8-d");
 
 describe("A função getPokemonDetails", () => {
   it("retorna erro quando procuramos um pokemon que não existe no banco de dados", () => {
