@@ -4,15 +4,15 @@ const uppercase = (str, callback) => {
   }, 500);
 };
 
-// ??
 
-// test('uppercase "oi" to equal "OI"', (done) => {
-//   uppercase('oi', (str) => {
-//     try {
-//       expect(str).toBe('OI');
-//       done();
-//     } catch (error) {
-//       done(error);
-//     }
-//   });
-// });
+test ('return HI if input is hi', (done) => {
+  function callback(toUpper) {
+    try {
+      expect(toUpper).toBe('HI');
+    done();
+    } catch (err) {
+      done(err);
+    }
+  }
+  uppercase('hi', callback);
+});
