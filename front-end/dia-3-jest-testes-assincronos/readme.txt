@@ -1,1 +1,1 @@
-ver pasta separada com clone do repositorio para acompanhamento da aula, nome: 9.3-contentasync-test
+Os exercícios do dia foram feitos em repositório separado. nome: 9.3-contentasync-test & exercise-magic-card
