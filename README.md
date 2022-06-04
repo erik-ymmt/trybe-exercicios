@@ -4,7 +4,7 @@ Olá! Esse é o repositório com todos os **exercícios resolvidos** durante o c
 
 ## Organização
 
-Os exercícios são organizados conforme os módulos, blocos e dias do curso. No total são 4 grandes módulos (**Fundamentos, Front-end, Back-end e Ciências da Computação**) subdivididos por blocos. Esses blocos, por sua vez, são subdivididos em dias, como mostra o diagrama exemplode de um módulo:
+Os exercícios são organizados conforme os módulos, blocos e dias do curso. No total são 4 grandes módulos (**Fundamentos, Front-end, Back-end e Ciências da Computação**) subdivididos por blocos. Esses blocos, por sua vez, são subdivididos em dias, como mostra o diagrama exemplo de de um módulo:
 
 ```mermaid
 graph LR
