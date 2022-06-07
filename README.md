@@ -19,16 +19,16 @@ C --> C3(Dia 2.3)
 A seguir os 4 módulos e suas respectivas listas de blocos.
 
 ## 1. Fundamentos
- - [ ] Unix e Shell
- - [ ] Introdução à HTML e CSS
- - [ ] Introdução à JavaScript e Lógica de Programação
- - [ ] DOM e Web Storage
- - [ ] HTML e CSS - Forms e Flexbox Responsivo
- - [ ] JavaScript ES6 e Testes Unitários
- - [ ] Higher Order Functions
+ - [x] Unix e Shell
+ - [x] Introdução à HTML e CSS
+ - [x] Introdução à JavaScript e Lógica de Programação
+ - [x] DOM e Web Storage
+ - [x] HTML e CSS - Forms e Flexbox Responsivo
+ - [x] JavaScript ES6 e Testes Unitários
+ - [x] Higher Order Functions
 
 ## 2. Front-end
- - [ ] JavaScript e Testes Assíncronos - Jest
+ - [x] JavaScript e Testes Assíncronos - Jest
  - [ ] Introdução à React
  - [ ] React: Componentes com Estados, Eventos e Forms
  - [ ] Ciclo de Vida de Componentes e React Router
