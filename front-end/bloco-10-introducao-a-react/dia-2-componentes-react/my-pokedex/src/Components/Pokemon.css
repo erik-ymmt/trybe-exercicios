@@ -1,0 +1,32 @@
+.pokemon {
+  border: 1px black solid;
+  border-radius: 5px;
+  padding: 5px;
+  flex-basis: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.name {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 400px) {
+  div {
+    background-color: red
+  }
+  .pokemon {
+    flex-basis: 90%;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .pokemon {
+    flex-basis: 20%;
+    flex-grow: 1;
+  }
+}
