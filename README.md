@@ -29,10 +29,10 @@ A seguir os 4 módulos e suas respectivas listas de blocos.
 
 ## 2. Front-end
  - [x] JavaScript e Testes Assíncronos - Jest
- - [ ] Introdução à React
- - [ ] React: Componentes com Estados, Eventos e Forms
- - [ ] Ciclo de Vida de Componentes e React Router
- - [ ] Metodologias Ágeis
+ - [x] Introdução à React
+ - [x] React: Componentes com Estados, Eventos e Forms
+ - [x] Ciclo de Vida de Componentes e React Router
+ - [x] Metodologias Ágeis
  - [ ] RTL 
  - [ ] Redux + React
  - [ ] Context API e React Hooks
