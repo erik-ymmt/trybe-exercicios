@@ -1,4 +1,5 @@
-let { randomNumber, captalizeAll, getFirstLetter, concatStrings } = require('./service')
+let { randomNumber } = require('./service');
+const service = require('./service');
 
 describe('Random Numbers Tests', () => {
   test('testa se a função é chamada', () => {
@@ -32,7 +33,7 @@ describe('Random Numbers Tests', () => {
 
 describe('Test Function Mocks', () => {
   it('tests if mock lowers cases of all string letters', () => {
-    captalizeAll = jest.fn().mockImplementationOnce(((string) => string.toLowerCase()));
+    captalizeAll = jest.spyOn(service, 'captalizeAll').mockImplementationOnce(((string) => string.toLowerCase()));
     expect(captalizeAll('WATER')).toBe('water');
   })
   it('tests wheter it returns the last letter of WATER', () => {
@@ -45,3 +46,15 @@ describe('Test Function Mocks', () => {
   })
 })
 
+describe('Test Original Functions', () => {
+  it('tests if upper cases of all string letters', () => {
+    expect(captalizeAll('water')).toBe('WATER');
+  })
+})
+
+describe('Test Dogs API', () => {
+  it('tests if dog API succeds', async () => {
+    const response = await service.getRandomDogImage();
+    expect(response).toBe('success');
+  })
+})
