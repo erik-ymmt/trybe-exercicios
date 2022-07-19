@@ -1,0 +1,19 @@
+{
+  "name": "dia-2-rtl-mocks-e-inputs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "jest": "^28.1.3"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
