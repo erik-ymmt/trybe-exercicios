@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      #container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        height: 50px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p id="color-name">Color: <span id="value">white</span></p>
+      <button id="previous">Previous color</button>
+      <button id="next">Next color</button>
+    </div>
+
+    <script>
+
+      const INITIAL_STATE = {
+        colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
+        index: 0,
+      };
+
+      const reducer = (state = INITIAL_STATE, action) => {
+        switch(action.type) {
+          case "NEXT_COLOR":
+            return {
+              ...state,
+              index: state.index === (state.colors.length - 1) ? 0 : (state.index + 1),
+            }
+          case "PREVIOUS_COLOR":
+            return {
+              ...state,
+              index: state.index === 0 ? (state.colors.length - 1) : (state.index - 1),
+            }
+          default:
+            return state;
+        }
+      }
+
+      const store = Redux.createStore(reducer);
+
+      const prevBtn = document.getElementById('previous');
+      const nextBtn = document.getElementById('next');
+      const colorName = document.getElementById('value');
+      const colorNameContainer = document.getElementById('color-name');
+      const container = document.getElementById('container');
+
+      const previousColor = {type:"NEXT_COLOR"};
+      const nextColor = {type:"PREVIOUS_COLOR"};
+
+      prevBtn.addEventListener('click', () => {store.dispatch(previousColor)});
+      nextBtn.addEventListener('click', () => {store.dispatch(nextColor)});
+
+      store.subscribe(() => {
+        const state = store.getState();
+        const currentyColor = state.colors[state.index];
+        currentyColor === 'black' 
+          ? colorNameContainer.style.color = 'white' 
+          : colorNameContainer.style.color = 'black'
+        colorName.innerHTML = currentyColor;
+        container.style.backgroundColor =  currentyColor;
+      });
+
+    </script>
+
+  </body>
+</html>
