@@ -34,7 +34,7 @@ A seguir os 4 módulos e suas respectivas listas de blocos.
  - [x] Ciclo de Vida de Componentes e React Router
  - [x] Metodologias Ágeis
  - [x] RTL 
- - [ ] Redux + React
+ - [x] Redux + React
  - [ ] Context API e React Hooks
 
 ## 3. Back-end
