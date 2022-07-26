@@ -19,7 +19,7 @@ function failedRequest(error) {
 }
 
 export function fetchDog() {
-  return (dispatch) => {
+  return async (dispatch) => {
     dispatch(requestDog());
     return fetch('https://dog.ceo/api/breeds/image/random')
       .then(response => response.json())
