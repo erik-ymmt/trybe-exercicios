@@ -30,7 +30,7 @@ function TodoList() {
       </button>
       <ul>
         {
-          taskList.map((t) => <li>{t}</li>)
+          taskList.map((t, i) => <li key={i}>{t}</li>)
         }
       </ul>
     </>
