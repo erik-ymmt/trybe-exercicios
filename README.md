@@ -35,7 +35,7 @@ A seguir os 4 módulos e suas respectivas listas de blocos.
  - [x] Metodologias Ágeis
  - [x] RTL 
  - [x] Redux + React
- - [ ] Context API e React Hooks
+ - [x] Context API e React Hooks
 
 ## 3. Back-end
  - [ ] Docker: Utilizando containers
