@@ -38,7 +38,7 @@ A seguir os 4 módulos e suas respectivas listas de blocos.
  - [x] Context API e React Hooks
 
 ## 3. Back-end
- - [ ] Docker: Utilizando containers
+ - [x] Docker: Utilizando containers
  - [ ] Introdução à SQL
  - [ ] Funções SQL, JOINs e Normalização
  - [ ] Introdução ao Desenvolvimento Web com Node.js
