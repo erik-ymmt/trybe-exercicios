@@ -1,0 +1,47 @@
+🚀 No Docker Hub, utilizando a caixa de busca ("Search for great content"), busque pela imagem da Distribuição Linux Debian.
+
+🚀 Uma vez que encontrar a imagem oficial, acesse-a (clicando em seu card) e verifique na página de detalhes. Confira se existe algum comando para baixar a imagem localmente sem ter que criar um container para isso.
+
+🚀 Baixe a imagem utilizando a tag: stable-slim, que é uma versão reduzida da distribuição.
+newgrp docker
+
+docker pull debian:stable-slim
+
+🚀 Após baixar a imagem para seu computador local, crie e execute um container no modo interativo utilizando essa imagem como referência — não esqueça referenciar a tag.
+
+docker container run --name debianDist -it debian:stable-slim
+
+🚀 No terminal, você deve conseguir rodar o comando cat /etc/*-release, que vai retornar os dados da distribuição Debian que está sendo rodada dentro do container.
+
+🚀 Encerre o terminal.
+
+exit
+
+🚀 Verifique na sua lista de containers qual container se refere ao exercício que acabou de praticar.
+
+docker container ls -a
+
+🚀 Inicie o mesmo container novamente, sem criar outro. Valide se ele está ativo na lista de containers.
+
+docker container start debianDist
+docker container ls -l
+
+🚀 Retome o container que foi criado anteriormente neste exercício.
+
+docker container attach debianDist
+
+🚀 Rode o comando cat /etc/debian_version que deve retornar a versão atual do sistema do container.
+
+🚀 Encerre o terminal.
+
+exit
+
+🚀 Remova somente o container criado para esse exercício.
+
+docker container rm debianDist 
+
+[BÔNUS] Crie e rode de modo interativo em modo 'Cleanup', a imagem andrius/ascii-patrol.
+
+docker container run -it --rm andrius/ascii-patrol
+
+[BÔNUS] **Encerre o container utilizando os botões [ctrl] + [c].
