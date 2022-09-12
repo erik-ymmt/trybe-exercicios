@@ -1,4 +1,5 @@
 version: "3"
+
 services:
   ghost:
     image: ghost:1-alpine
@@ -13,8 +14,21 @@ services:
       database__connection__database: ghost
     depends_on:
       - "database"
+    networks:
+      - my-network
+
   database:
     image: mysql:5.7
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: myPassword
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - my-network
+
+volumes:
+  db:
+
+networks:
+  my-network:
