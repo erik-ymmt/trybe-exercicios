@@ -2,7 +2,7 @@ version: "3"
 services:
   frontend:
     build: frontend/
-    restart: always
+    restart: on-failure
     ports:
       - 3000:3000
     depends_on:
@@ -13,7 +13,7 @@ services:
       - rede-virtual-1
   backend:
     build: backend/
-    restart: always
+    restart: on-failure
     ports:
       - 3001:3001
     environment:
@@ -25,7 +25,7 @@ services:
       - rede-virtual-2
   database:
     image: betrybe/docker-compose-example-database:v1
-    restart: always
+    restart: on-failure
     volumes:
       - dados-do-banco:/data/db
     networks:
