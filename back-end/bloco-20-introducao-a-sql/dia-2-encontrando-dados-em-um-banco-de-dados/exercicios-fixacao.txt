@@ -14,4 +14,3 @@
 
 5.Monte uma query que exiba a data e hora atuais. Dê a essa coluna o nome "data_atual".
 > SELECT now() AS data_atual;
-
