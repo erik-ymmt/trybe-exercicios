@@ -25,6 +25,21 @@ WHERE DATE(payment_date)
 BETWEEN '2005-05-1' and '2005-08-01';
 >> Foram feitos 10851 alugueis
 
+>> ATENÇÃO PARA A DIFERENÇA <<
+SELECT payment_id, payment_date payments
+FROM sakila.payment
+WHERE DATE(payment_date)
+BETWEEN '2005-05-1' and '2005-08-01'
+ORDER BY payment_date DESC;
+-- inclui o dia 2005-08-01
+
+SELECT payment_id, payment_date payments
+FROM sakila.payment
+WHERE payment_date
+BETWEEN '2005-05-1' and '2005-08-01'
+ORDER BY payment_date DESC;
+-- não inclui o dia 2005-08-01
+
 6.Mostre o título, ano de lançamento e duração do empréstimo de todos os filmes com a duração de empréstimo de 3 a 6. Os resultados devem ser classificados em filmes com maior duração de empréstimo primeiro. Em caso de empate, ordene em ordem alfabética pelo título.
 >> SELECT title, release_year, rental_duration
 FROM sakila.film
