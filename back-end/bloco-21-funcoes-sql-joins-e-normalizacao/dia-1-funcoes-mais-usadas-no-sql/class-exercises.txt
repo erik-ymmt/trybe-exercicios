@@ -85,10 +85,29 @@ Utilizando as funções de agregação AVG, MIN, MAX, SUM e COUNT
 
 16.Monte um query que exiba:
 a.A média de duração dos filmes e dê o nome da coluna de 'Média de Duração';
+>>
+SELECT AVG(length) AS 'Média de duração'
+FROM sakila.film;
+
 b.A duração mínima dos filmes como 'Duração Mínima';
+>>
+SELECT MIN(length) AS 'Duração mínima'
+FROM sakila.film;
+
 c.A duração máxima dos filmes como 'Duração Máxima';
+>>
+SELECT MAX(length) AS 'Duração máxima'
+FROM sakila.film;
+
 d.A soma de todas as durações como 'Tempo de Exibição Total';
+>>
+SELECT SUM(length) AS 'Tempo de Exibição Total'
+FROM sakila.film;
+
 e.E, finalmente, a quantidade total de filmes cadastrados na tabela sakila.film como 'Filmes Registrados'.
+>>
+SELECT COUNT(title) AS 'Filmes Registrados'
+FROM sakila.film;
 
 --
 Exibindo e filtrando dados de forma agrupada com GROUP BY e HAVING
