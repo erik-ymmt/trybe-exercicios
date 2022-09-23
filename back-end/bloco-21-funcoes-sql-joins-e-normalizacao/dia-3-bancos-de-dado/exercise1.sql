@@ -31,3 +31,38 @@ CREATE TABLE zoo.animal_keeper(
   FOREIGN KEY (id_keeper) REFERENCES zoo.keeper (id_keeper)
 );
 
+INSERT INTO zoo.animals
+(`name`,
+`specie`,
+`sex`,
+`age`,
+`location`)
+VALUES
+('Bob', 'Zebra', 'male', 3, 'north'),
+('Miss', 'giraffe', 'female', 4, 'center'),
+('Bernadette', 'penguin', 'female', 4, 'north'),
+('Travis', 'lion', 'male', 2, 'south');
+
+INSERT INTO `zoo`.`managers`
+(`name`)
+VALUES
+('Marko'),
+('Pamela');
+
+INSERT INTO `zoo`.`keeper`
+(`name`,
+`id_manager`)
+VALUES
+('Ronald', 1),
+('Mariah', 1),
+('Grace', 2);
+
+INSERT INTO `zoo`.`animal_keeper`
+(`id_animal`,
+`id_keeper`)
+VALUES
+(1,1),
+(1,2),
+(2,3),
+(3,4);
+
