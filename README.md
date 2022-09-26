@@ -40,7 +40,7 @@ A seguir os 4 módulos e suas respectivas listas de blocos.
 ## 3. Back-end
  - [x] Docker: Utilizando containers
  - [x] Introdução à SQL
- - [ ] Funções SQL, JOINs e Normalização
+ - [x] Funções SQL, JOINs e Normalização
  - [ ] Introdução ao Desenvolvimento Web com Node.js
  - [ ] Node.js: Camada de Serviço e Arquitetura Rest e Restful
  - [ ] Node.js: ORM e Autenticação
