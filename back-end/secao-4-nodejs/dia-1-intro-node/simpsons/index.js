@@ -46,12 +46,27 @@ async function deleteSimpson() {
   }
 }
 
+async function createSimpsonFamily() {
+  const simpsonsNameData = await readSimpsons("./simpsons.json");
+  const newSimpsons = simpsonsNameData.filter(
+    (simpsonName) => Number(simpsonName.id) >= 1 && Number(simpsonName.id) <= 4
+  );
+  simpsonFamily = JSON.stringify(newSimpsons);
+  try {
+    await writeFile("./simpsonFamily.json", simpsonFamily);
+    console.log("sucesso!");
+  } catch (err) {
+    console.log("erro:", err);
+  }
+}
+
 async function main() {
   // await printSimpsons();
   // const id = readline.questionInt("ID do personagem: ");
   // console.log("id:", id);
   // findSimpson(id);
-  deleteSimpson();
+  // deleteSimpson();
+  createSimpsonFamily();
 }
 
 main();
