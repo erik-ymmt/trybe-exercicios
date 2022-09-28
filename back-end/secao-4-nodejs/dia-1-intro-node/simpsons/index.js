@@ -37,7 +37,7 @@ async function deleteSimpson() {
   const newSimpsons = simpsonsNameData.filter(
     (simpsonName) => simpsonName.id !== "10" && simpsonName.id !== "6"
   );
-  deleteSimpson = JSON.stringify(newSimpsons)
+  deleteSimpson = JSON.stringify(newSimpsons);
   try {
     await writeFile("./simpsonsCopy.json", deleteSimpson);
     console.log("sucesso!");
@@ -60,13 +60,46 @@ async function createSimpsonFamily() {
   }
 }
 
+async function addToSimpsonFamily() {
+  const simpsonsNameData = await readSimpsons("./simpsons.json");
+  const newSimpson = simpsonsNameData.find(
+    (simpsonName) => simpsonName.name === "Nelson Muntz"
+  );
+  const simpsonsFamilyData = await readSimpsons("./simpsonFamily.json");
+  const newSimpsonFamily = JSON.stringify([...simpsonsFamilyData, newSimpson]);
+  try {
+    await writeFile("./simpsonFamily.json", newSimpsonFamily);
+    console.log("sucesso!");
+  } catch (err) {
+    console.log("erro:", err);
+  }
+}
+
+async function changeSimpsonFamily() {
+  const simpsonsNameData = await readSimpsons("./simpsons.json");
+  const newSimpson = simpsonsNameData.find(
+    (simpsonName) => simpsonName.name === "Maggie Simpson"
+  );
+  const simpsonsFamilyData = await readSimpsons("./simpsonFamily.json");
+  const deleteSimpson = simpsonsFamilyData.filter(
+    (e) => e.name != "Nelson Muntz"
+  );
+  const newSimpsonFamily = JSON.stringify([...deleteSimpson, newSimpson]);
+  try {
+    await writeFile("./simpsonFamily.json", newSimpsonFamily);
+    console.log("sucesso!");
+  } catch (err) {
+    console.log("erro:", err);
+  }
+}
+
 async function main() {
   // await printSimpsons();
   // const id = readline.questionInt("ID do personagem: ");
   // console.log("id:", id);
   // findSimpson(id);
   // deleteSimpson();
-  createSimpsonFamily();
+  changeSimpsonFamily();
 }
 
 main();
