@@ -26,9 +26,28 @@ const validateTeam = (req, res, next) => {
   }
 };
 
+const existingId = (req, res, next) => {
+  const id = Number(req.params.id);
+  if (teams.some((team) => team.id === id)) {
+    next();
+  } else {
+    res.status(400).send({ message: 'id inexistente' });
+  }
+};
+
 app.get('/', (req, res) => res.status(200).json({ message: 'Olá Mundo!' }));
 
 app.get('/teams', (req, res) => res.status(200).json({ teams }));
+
+app.get('/teams/:id', existingId, (req, res) => {
+  const id = Number(req.params.id);
+  const team = teams.find((t) => t.id === id);
+  if (team) {
+    res.json(team);
+  } else {
+    res.sendStatus(404);
+  }
+});
 
 app.post('/teams', validateTeam, (req, res) => {
   const newTeam = { ...req.body };
