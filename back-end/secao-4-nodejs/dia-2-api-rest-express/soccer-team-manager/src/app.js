@@ -17,18 +17,27 @@ const teams = [
   },
 ];
 
+const validateTeam = (req, res, next) => {
+  const requiredProperties = ['name', 'initials'];
+  if (requiredProperties.every((property) => property in req.body)) {
+    next();
+  } else {
+    res.sendStatus(404).send({ message: 'o time precisa ter todos os atributos' });
+  }
+};
+
 app.get('/', (req, res) => res.status(200).json({ message: 'Olá Mundo!' }));
 
 app.get('/teams', (req, res) => res.status(200).json({ teams }));
 
-app.post('/teams', (req, res) => {
+app.post('/teams', validateTeam, (req, res) => {
   const newTeam = { ...req.body };
   teams.push(newTeam);
 
   res.status(201).json({ team: newTeam });
 });
 
-app.put('/teams/:id', (req, res) => {
+app.put('/teams/:id', validateTeam, (req, res) => {
   const { id } = req.params;
   const { name, initials } = req.body;
   let updatedTeam;
