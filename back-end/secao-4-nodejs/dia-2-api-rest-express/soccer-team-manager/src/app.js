@@ -1,4 +1,5 @@
 const express = require('express');
+const validateTeam = require('./middlewares/validateTeam');
 
 const app = express();
 
@@ -16,15 +17,6 @@ const teams = [
     initials: 'CAM',
   },
 ];
-
-const validateTeam = (req, res, next) => {
-  const requiredProperties = ['name', 'initials'];
-  if (requiredProperties.every((property) => property in req.body)) {
-    next();
-  } else {
-    res.sendStatus(404).send({ message: 'o time precisa ter todos os atributos' });
-  }
-};
 
 const existingId = (req, res, next) => {
   const id = Number(req.params.id);
@@ -56,7 +48,7 @@ app.post('/teams', validateTeam, (req, res) => {
   res.status(201).json({ team: newTeam });
 });
 
-app.put('/teams/:id', validateTeam, (req, res) => {
+app.put('/teams/:id', existingId, validateTeam, (req, res) => {
   const { id } = req.params;
   const { name, initials } = req.body;
   let updatedTeam;
@@ -74,7 +66,7 @@ app.put('/teams/:id', validateTeam, (req, res) => {
   res.status(200).json({ updatedTeam });
 });
 
-app.delete('/teams/:id', (req, res) => {
+app.delete('/teams/:id', existingId, (req, res) => {
   const { id } = req.params;
   const arrayPosition = teams.findIndex((team) => team.id === Number(id));
   teams.splice(arrayPosition, 1);
