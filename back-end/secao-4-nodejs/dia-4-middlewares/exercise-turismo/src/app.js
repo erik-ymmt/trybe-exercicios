@@ -86,11 +86,32 @@ function validateDateFormat(req, res, next) {
   res.status(400).json({"message": "invalid format, createdAt needs to be dd/mm/yyyy"});
 }
 
+function validateRating(req, res, next) {
+  const rating = Number(req.body.description.rating);
+
+  if (rating.isInteger && rating >= 1 && rating <= 5) {
+    return next();
+  }
+  res.status(400).json({"message": "invalid format, rating must be an integer between 1 and 5"});
+}
+
+function validateDifficulty(req, res, next) {
+  const {difficulty} = req.body.description;
+  const validDifs = ["Fácil", "Médio", "Difícil"]
+
+  if (validDifs.includes(difficulty)) {
+    return next();
+  }
+  res.status(400).json({"message": "invalid format, difficulty must to be Fácil, Médio ou Difícil"});
+}
+
 app.post("/activities",
   validateName,
   validatePrice,
   validateDescription,
   validateDateFormat,
+  validateRating,
+  validateDifficulty,
   (req, res) => {
     const newActivity = req.body;
     activities.push(newActivity);
