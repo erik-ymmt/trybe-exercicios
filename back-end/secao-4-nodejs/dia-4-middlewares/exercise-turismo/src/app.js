@@ -16,23 +16,54 @@ const activities = [
   }
 ];
 
-function validateActivity(req, res, next) {
-  const newActivity = req.body;
-  const requiredFields = ["name","price", "description"];
-  const description = newActivity.description;
-  const descriptionRequired = ["rating", "difficulty", "createdAt"];
+// function validateActivity(req, res, next) {
+//   const newActivity = req.body;
+//   const requiredFields = ["name","price", "description"];
+//   const description = newActivity.description;
+//   const descriptionRequired = ["rating", "difficulty", "createdAt"];
 
-  if(
-    requiredFields.every((field) => field in newActivity)
-    && descriptionRequired.every((field) => field in description)
-  ) {
+//   if(
+//     requiredFields.every((field) => field in newActivity)
+//     && descriptionRequired.every((field) => field in description)
+//   ) {
+//     next();
+//   } else {
+//     res.status(401).json({"message": "invalid format"});
+//   }
+// }
+
+function validateName(req, res, next) {
+  const activityName = req.body.name;
+  if (activityName) {
     next();
   } else {
-    res.status(401).json({"message": "invalid format"});
+    res.status(401).json({"message": "invalid format, missing name"});
   }
 }
 
-app.post("/activities", validateActivity, (req, res) => {
+function validateName(req, res, next) {
+  const activityName = req.body.name;
+  if (!activityName) {
+    res.status(400).json({"message": "invalid format, missing name"});
+  }
+  if (activityName.length < 4) {
+    res.status(400).json({"message": "invalid format, name must have more than 4 letters"});
+  }
+  next();
+}
+
+function validatePrice (req, res, next) {
+  const activityPrice = req.body.price;
+  if (!activityPrice) {
+    res.status(400).json({"message": "invalid format, missing price"});
+  }
+  if (activityPrice < 0) {
+    res.status(400).json({"message": "invalid format, price must be a number, zero or greater"});
+  }
+  next();
+}
+
+app.post("/activities", validateName, validatePrice, (req, res) => {
   const newActivity = req.body;
   activities.push(newActivity);
 
