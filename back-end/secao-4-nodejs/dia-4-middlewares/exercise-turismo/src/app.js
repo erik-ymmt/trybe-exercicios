@@ -16,16 +16,21 @@ const activities = [
   }
 ];
 
-// function validateActivity(req, res, next) {
-//   const newActivity = req.body;
-//   const requiredFields = ["name","price", "description"];
-//   const descriptionRequired = ["rating", "difficulty", "createdAt"];
+function validateActivity(req, res, next) {
+  const newActivity = req.body;
+  const requiredFields = ["name","price", "description"];
+  const description = newActivity.description;
+  const descriptionRequired = ["rating", "difficulty", "createdAt"];
 
-//   if() {
-//     return res.status(401).json({"message": "invalid format"})
-//   }
-//   next();
-// }
+  if(
+    requiredFields.every((field) => field in newActivity)
+    && descriptionRequired.every((field) => field in description)
+  ) {
+    next();
+  } else {
+    res.status(401).json({"message": "invalid format"});
+  }
+}
 
 app.post("/activities", validateActivity, (req, res) => {
   const newActivity = req.body;
