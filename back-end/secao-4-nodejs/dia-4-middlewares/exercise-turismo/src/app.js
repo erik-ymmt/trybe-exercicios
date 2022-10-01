@@ -76,11 +76,27 @@ function validateDescription (req, res, next) {
   next();
 }
 
-app.post("/activities", validateName, validatePrice, validateDescription, (req, res) => {
-  const newActivity = req.body;
-  activities.push(newActivity);
+function validateDateFormat(req, res, next) {
+  const {createdAt} = req.body.description;
+  const dataRegex = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i;
 
-  res.status(201).json({ "message": "activity submitted with success!" });
-});
+  if (dataRegex.test(createdAt)) {
+    return next();
+  }
+  res.status(400).json({"message": "invalid format, createdAt needs to be dd/mm/yyyy"});
+}
+
+app.post("/activities",
+  validateName,
+  validatePrice,
+  validateDescription,
+  validateDateFormat,
+  (req, res) => {
+    const newActivity = req.body;
+    activities.push(newActivity);
+
+    res.status(201).json({ "message": "activity submitted with success!" });
+  }
+);
 
 module.exports = app;
