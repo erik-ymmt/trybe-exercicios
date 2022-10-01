@@ -34,20 +34,11 @@ const activities = [
 
 function validateName(req, res, next) {
   const activityName = req.body.name;
-  if (activityName) {
-    next();
-  } else {
-    res.status(401).json({"message": "invalid format, missing name"});
-  }
-}
-
-function validateName(req, res, next) {
-  const activityName = req.body.name;
   if (!activityName) {
-    res.status(400).json({"message": "invalid format, missing name"});
+    return res.status(400).json({"message": "invalid format, missing name"});
   }
   if (activityName.length < 4) {
-    res.status(400).json({"message": "invalid format, name must have more than 4 letters"});
+    return res.status(400).json({"message": "invalid format, name must have more than 4 letters"});
   }
   next();
 }
@@ -55,15 +46,37 @@ function validateName(req, res, next) {
 function validatePrice (req, res, next) {
   const activityPrice = req.body.price;
   if (!activityPrice) {
-    res.status(400).json({"message": "invalid format, missing price"});
+    return res.status(400).json({"message": "invalid format, missing price"});
   }
   if (activityPrice < 0) {
-    res.status(400).json({"message": "invalid format, price must be a number, zero or greater"});
+    return res.status(400).json({"message": "invalid format, price must be a number, zero or greater"});
   }
   next();
 }
 
-app.post("/activities", validateName, validatePrice, (req, res) => {
+function validateDescription (req, res, next) {
+  const {description} = req.body;
+
+  if (!description) {
+    return res.status(400).json({"message": "invalid format, missing description"});
+  }
+
+  const {rating} = req.body.description;
+  const {difficulty} = req.body.description;
+  const {createdAt} = req.body.description;
+  if (!rating) {
+    return res.status(400).json({"message": "invalid format, missing rating"});
+  }
+  if (!difficulty) {
+    return res.status(400).json({"message": "invalid format, missing difficulty"});
+  }
+  if (!createdAt) {
+    return res.status(400).json({"message": "invalid format, missing createdAt"});
+  }
+  next();
+}
+
+app.post("/activities", validateName, validatePrice, validateDescription, (req, res) => {
   const newActivity = req.body;
   activities.push(newActivity);
 
