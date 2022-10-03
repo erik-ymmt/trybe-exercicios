@@ -1,0 +1,16 @@
+{
+  "name": "ficonacci-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ficonacci.js",
+  "scripts": {
+    "start": "node fibonacci.js",
+    "fibonacci": "node ./fibonacci.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
