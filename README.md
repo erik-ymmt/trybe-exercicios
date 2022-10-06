@@ -41,8 +41,8 @@ A seguir os 4 módulos e suas respectivas listas de blocos.
  - [x] Docker: Utilizando containers
  - [x] Introdução à SQL
  - [x] Funções SQL, JOINs e Normalização
- - [ ] Introdução ao Desenvolvimento Web com Node.js
- - [ ] Node.js: Camada de Serviço e Arquitetura Rest e Restful
+ - [x] Introdução ao Desenvolvimento Web com Node.js
+ - [x] Arquitetura de Software: Model, Service e Controller (MSC)
  - [ ] Node.js: ORM e Autenticação
  - [ ] Deployment
  - [ ] Typescript
