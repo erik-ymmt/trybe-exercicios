@@ -1,9 +1,10 @@
 const { Book } = require("../models/");
 
 const getExistentIds = async () => {
-  const ids = Book.findAll({
+  const [{dataValues}] = await Book.findAll({
     attributes: ["id"],
   });
+  const ids = Object.values(dataValues);
   return ids;
 };
 
