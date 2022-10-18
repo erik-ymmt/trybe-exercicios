@@ -1,11 +1,11 @@
-const express = require("express");
+const express = require('express');
 
-const Book = require("./controller/books.controller");
+const Book = require("./controllers/books.controller");
 
 const app = express();
 
 app.use(express.json());
 
-app.get("/book", Book.getAll);
+app.get('/book', Book.getAll);
 
 module.exports = app;

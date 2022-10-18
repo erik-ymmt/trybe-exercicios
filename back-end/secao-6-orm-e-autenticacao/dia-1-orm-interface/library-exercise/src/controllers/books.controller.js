@@ -1,4 +1,4 @@
-const booksService = require("../service/books.service");
+const booksService = require("../services/books.service");
 
 const getAll = async (_req, res) => {
   console.log('controller');
