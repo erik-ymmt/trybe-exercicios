@@ -13,4 +13,8 @@ app.get("/book/:id", verifyIds, Book.getById);
 
 app.post("/book", Book.createBook);
 
+app.put("/book/:id", verifyIds, Book.updateBook);
+
+app.delete("/book/:id", verifyIds, Book.deleteBook);
+
 module.exports = app;
