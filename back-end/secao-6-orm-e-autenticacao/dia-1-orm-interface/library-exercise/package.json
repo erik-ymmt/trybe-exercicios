@@ -2,8 +2,10 @@
   "name": "library-exercise",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon --ignore coverage src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,6 +18,7 @@
     "sequelize": "^6.25.2"
   },
   "devDependencies": {
+    "nodemon": "^2.0.20",
     "sequelize-cli": "^6.5.1"
   }
 }
