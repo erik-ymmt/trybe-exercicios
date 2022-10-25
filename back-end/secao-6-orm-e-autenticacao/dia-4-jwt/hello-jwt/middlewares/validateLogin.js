@@ -4,8 +4,8 @@ const validateBody = (req, res, next) => {
   const user = req.body;
 
   const schema = Joi.object({
-    username: Joi.string().required(),
-    password: Joi.string().required(),
+    username: Joi.string().min(5).required(),
+    password: Joi.string().min(5).required(),
   });
 
   const { error } = schema.validate(user);

@@ -12,7 +12,7 @@ module.exports = (req, res) => {
     };
 
     const token = jwt.sign(
-      { data: { user: user.username } },
+      { data: { user: user.username, admin: false } },
       secret,
       jwtConfig,
     );
