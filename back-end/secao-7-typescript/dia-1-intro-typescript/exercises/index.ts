@@ -15,3 +15,15 @@ console.log(`Quadrado de lado 100cm: ${Exercise.square(100)}cm²`);
 console.log(`Retângulo de base 10cm e altura 25cm: ${Exercise.rectangle(10, 25)}cm²`);
 console.log(`Retângulo de base 5cm e altura 30cm: ${Exercise.rectangle(5, 30)}cm²`);
 console.log(`Retângulo de base 100cm e altura 200cm: ${Exercise.rectangle(100, 200)}cm²`);
+
+console.log(`Área do losango é de ${Exercise.calculateDiamondArea(32, 18)} cm²`);
+console.log(`Área do losango é de ${Exercise.calculateDiamondArea(200, 50)} cm²`);
+console.log(`Área do losango é de ${Exercise.calculateDiamondArea(75, 25)} cm²`);
+
+console.log(`Área do trapézio é de ${Exercise.calculateTrapezeArea(100, 70, 50)} cm²`);
+console.log(`Área do trapézio é de ${Exercise.calculateTrapezeArea(75, 50, 35)} cm²`);
+console.log(`Área do trapézio é de ${Exercise.calculateTrapezeArea(150, 120, 80)} cm²`);
+
+console.log(`Área do círculo é de ${Exercise.calculateCircleArea(25)} cm²`);
+console.log(`Área do círculo é de ${Exercise.calculateCircleArea(100)} cm²`);
+console.log(`Área do círculo é de ${Exercise.calculateCircleArea(12.5)} cm²`);

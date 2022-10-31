@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.rectangle = exports.square = exports.triangle = exports.sumArray = exports.add = exports.personAge = exports.greeter = void 0;
+exports.calculateCircleArea = exports.calculateTrapezeArea = exports.calculateDiamondArea = exports.rectangle = exports.square = exports.triangle = exports.sumArray = exports.add = exports.personAge = exports.greeter = void 0;
 function greeter(name) {
     return `Olá ${name}`;
 }
@@ -29,3 +29,16 @@ function rectangle(base, height) {
     return base * height;
 }
 exports.rectangle = rectangle;
+function calculateDiamondArea(diagonal1, diagonal2) {
+    return (diagonal1 * diagonal2) / 2;
+}
+exports.calculateDiamondArea = calculateDiamondArea;
+function calculateTrapezeArea(base1, base2, height) {
+    return ((base1 + base2) * height) / 2;
+}
+exports.calculateTrapezeArea = calculateTrapezeArea;
+function calculateCircleArea(radius) {
+    const pi = 3.14;
+    return pi * (radius ** 2);
+}
+exports.calculateCircleArea = calculateCircleArea;
