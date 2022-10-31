@@ -45,3 +45,5 @@ console.log(`Área do trapézio é de ${Exercise.calculateTrapezeArea(150, 120, 
 console.log(`Área do círculo é de ${Exercise.calculateCircleArea(25)} cm²`);
 console.log(`Área do círculo é de ${Exercise.calculateCircleArea(100)} cm²`);
 console.log(`Área do círculo é de ${Exercise.calculateCircleArea(12.5)} cm²`);
+console.log(`${Exercise.weekDays[1]} is before ${Exercise.weekDays[4]}`);
+console.log(`${Exercise.rainbowColors[0]} deve ser a primeira cor do arco-íris, ou seria ${Exercise.rainbowColors[4]}?`);

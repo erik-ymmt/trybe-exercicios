@@ -38,3 +38,21 @@ export function calculateCircleArea(radius: number): number {
   const pi = 3.14;
   return pi * (radius ** 2);
 }
+
+export enum weekDays {
+  sunday,
+  monday,
+  tuesday,
+  wednesday,
+  thursday,
+  friday,
+  saturday,
+}
+
+export enum rainbowColors {
+  vermelho,
+  laranja,
+  amarelo,
+  azul,
+  verde,
+}
