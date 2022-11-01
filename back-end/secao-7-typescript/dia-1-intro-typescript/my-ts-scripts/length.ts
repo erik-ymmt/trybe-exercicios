@@ -10,9 +10,9 @@ const units: {[key:string]: number} = {
 
 const convertLength = (value: number, unitConverted: string, finalUnit: string): string => {
   if(units[unitConverted] && units[finalUnit]) {
-    const conversion = units[finalUnit] / units[unitConverted];
+    const conversion = units[unitConverted] / units[finalUnit];
     const result = value * conversion;
-    return `${result}${finalUnit}`
+    return `${value}${unitConverted} = ${result}${finalUnit}`
   }
 
   return "invalid unit";
@@ -20,4 +20,4 @@ const convertLength = (value: number, unitConverted: string, finalUnit: string):
 
 console.log(convertLength(1, 'cm', 'cm'));
 
-export = { convertLength }
+export { convertLength }
