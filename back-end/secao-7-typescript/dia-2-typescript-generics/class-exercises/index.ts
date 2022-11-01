@@ -57,3 +57,13 @@ class House {
 const home = new House(10, "rua brasil");
 console.log(home);
 
+// Interfaces
+interface Car {
+  brand: string,
+  year: number,
+}
+
+interface Cat {
+  name: string,
+  age: number,
+}
