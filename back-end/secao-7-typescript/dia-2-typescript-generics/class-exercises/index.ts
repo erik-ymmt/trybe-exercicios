@@ -67,3 +67,4 @@ interface Cat {
   name: string,
   age: number,
 }
+
