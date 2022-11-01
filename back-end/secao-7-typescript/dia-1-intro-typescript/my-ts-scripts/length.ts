@@ -8,7 +8,7 @@ const units: {[key:string]: number} = {
   mm: 0.001,
 }
 
-const convert = (value: number, unitConverted: string, finalUnit: string): string => {
+const convertLength = (value: number, unitConverted: string, finalUnit: string): string => {
   if(units[unitConverted] && units[finalUnit]) {
     const conversion = units[finalUnit] / units[unitConverted];
     const result = value * conversion;
@@ -18,4 +18,6 @@ const convert = (value: number, unitConverted: string, finalUnit: string): strin
   return "invalid unit";
 }
 
-console.log(convert(1, 'cm', 'cm'));
+console.log(convertLength(1, 'cm', 'cm'));
+
+export = { convertLength }
