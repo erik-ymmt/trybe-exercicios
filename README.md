@@ -43,8 +43,8 @@ A seguir os 4 módulos e suas respectivas listas de blocos.
  - [x] Funções SQL, JOINs e Normalização
  - [x] Introdução ao Desenvolvimento Web com Node.js
  - [x] Arquitetura de Software: Model, Service e Controller (MSC)
- - [ ] Node.js: ORM e Autenticação
- - [ ] Deployment
+ - [x] Node.js: ORM e Autenticação
+ - [x] Deployment
  - [ ] Typescript
  - [ ] Programação Orientada a Objetos e SOLID
  - [ ] Introdução ao Mongo DB
