@@ -11,30 +11,30 @@ interface PizzaComum extends Pizza {
 }
 
 interface PizzaVeg extends Pizza {
-  flavor: 'broccoli';
+  flavor: "broccoli";
 }
 
 const pizza1: Pizza = {
   flavor: "calabresa",
   slices: 8,
-}
+};
 
 const pizza2: Pizza = {
   flavor: "margherita",
   slices: 6,
-}
+};
 
 const pizza3: Pizza = {
   flavor: "Nutela",
   slices: 4,
-}
+};
 
 const pizza4: PizzaComum = {
   flavor: "Chicken",
   slices: 8,
-}
+};
 
 const pizza5: PizzaVeg = {
   flavor: "broccoli",
   slices: 8,
-}
+};
