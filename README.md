@@ -45,7 +45,7 @@ A seguir os 4 módulos e suas respectivas listas de blocos.
  - [x] Arquitetura de Software: Model, Service e Controller (MSC)
  - [x] Node.js: ORM e Autenticação
  - [x] Deployment
- - [ ] Typescript
+ - [x] Typescript
  - [ ] Programação Orientada a Objetos e SOLID
  - [ ] Introdução ao Mongo DB
  - [ ] MongoDB com Node.js e POO
