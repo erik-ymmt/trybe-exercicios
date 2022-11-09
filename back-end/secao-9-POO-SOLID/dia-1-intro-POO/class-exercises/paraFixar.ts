@@ -1,26 +1,42 @@
 // exercise 1
 class Tv {
-  brand: string;
-  size: number;
-  resolution: string;
-  connections: string[];
-  connectedTo?: string;
+  private _brand: string;
+  private _size: number;
+  private _resolution: string;
+  private _connections: string[];
+  private _connectedTo?: string;
 
   constructor(brand:string, size: number, resolution: string, connections: string[]) {
-    this.brand = brand;
-    this.size = size;
-    this.resolution = resolution;
-    this.connections = connections;
+    this._brand = brand;
+    this._size = size;
+    this._resolution = resolution;
+    this._connections = connections;
+  }
+
+  set connectedTo(connection: string | undefined) {
+    if (connection && this._connections.includes(connection)) {
+      this._connectedTo = connection;
+    } else {
+      console.log("Sorry, connection unavailable!");
+    }
+  }
+
+  get connectedTo(): string | undefined {
+    return this._connectedTo;
   }
 
   turnOn(): void {
-    console.log(this.brand, this.size, this.resolution, this.connections);
+    console.log(this._brand, this._size, this._resolution, this._connections);
   }
 }
 
-const tvSamsung = new Tv('samsumg', 32, '4k', ['hdmi']);
+const tvSamsung = new Tv('samsumg', 32, '4k', ['hdmi', 'USB']);
 
 tvSamsung.turnOn();
+tvSamsung.connectedTo = 'USB';
+console.log(tvSamsung.connectedTo);
+tvSamsung.connectedTo = 'USB 3.0';
+console.log(tvSamsung.connectedTo);
 
 // exercise 2
 class Person {
