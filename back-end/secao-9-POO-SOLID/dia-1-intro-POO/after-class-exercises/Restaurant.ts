@@ -8,6 +8,8 @@ class Item {
   private _price: number;
 
   constructor(name: string, price: number) { this._name = name; this._price = price }
+
+  get price() { return this._price}
 }
 
 class Order {
@@ -27,7 +29,21 @@ class Order {
     this._paymentMethod = paymentMethod;
     this._discount = discount;
   }
+
+  calculateTotal() {
+    return this._items.reduce((acc, cur) => (acc + cur.price), 0)
+  }
+
+  calculateTotalWithDiscount() {
+    const total = this.calculateTotal();
+    return total * (1 - this._discount);
+  }
 }
 
-export { Client, Order, Item }
+const erik = new Client('erik');
+const batata = new Item('batata', 5);
+const guarana = new Item('guarana', 3);
+const order = new Order(erik, [batata, guarana], 'cartao', 0.5);
 
+console.log(order.calculateTotal());
+console.log(order.calculateTotalWithDiscount());
