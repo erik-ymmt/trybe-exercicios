@@ -1,4 +1,4 @@
-// exercise 1
+// exercise 1 and 3
 class Tv {
   private _brand: string;
   private _size: number;
@@ -84,10 +84,3 @@ console.log(p2.age);
 p1.age = 28;
 console.log(p1.age);
 console.log(p1.height);
-
-
-
-
-
-
-
