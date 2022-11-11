@@ -31,3 +31,5 @@ const longRange = new LongRangeCharacter();
 
 actions(melee);
 actions(longRange);
+
+export {}
