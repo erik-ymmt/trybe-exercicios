@@ -1,5 +1,7 @@
 export default class Subject {
-  private _name: string;
+  constructor(private _name: string) {
+    this.name = _name;
+  }
 
   get name() {
     return this._name
