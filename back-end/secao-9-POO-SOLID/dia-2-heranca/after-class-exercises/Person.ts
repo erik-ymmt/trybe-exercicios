@@ -1,28 +1,38 @@
 export default class Person {
-  private _name: string;
-  private _birthDate: Date;
-  
-  constructor(name: string, birthDate: Date) {
-    this.name = name;
-    // to do - date verification
-    birthDate = this._birthDate;
+
+  constructor(private _name: string, private _birthDate: Date) {
+    this.name = _name;
+    this.birthDate = _birthDate;
   }
 
   private validateName(name: string) {
     if (name.length < 3) throw new Error('Nome deve ter pelo menos 3 caracteres');
-    this.name = name;
+  }
+
+  private validateBirthDate(date: Date) {
+    const today = new Date().getTime();
+    const birthDate = date.getTime();
+    const yearInMs = 31_536_000_000;
+    const age = Math.floor((today - birthDate) / yearInMs)
+    if (age > 120) throw Error('A pessoa deve ter menos de 120 anos.');
+    if (birthDate > today) throw Error('Digite uma data de nascimento válida.')
   }
 
   get name() {
     return this._name;
   }
 
-  set name(name: string) {
-    this.validateName(name);
-    
+  set name(value: string) {
+    this.validateName(value);
+    this._name = value;
   }
 
   get birthDate() {
     return this._birthDate;
+  }
+
+  set birthDate(value: Date) {
+    this.validateBirthDate(value);
+    this._birthDate = value;
   }
 }
