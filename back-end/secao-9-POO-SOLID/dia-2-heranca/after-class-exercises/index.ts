@@ -3,9 +3,10 @@ import Student from "./Student";
 import Subject from "./Subject";
 import Teacher from "./Teacher";
 
-const birth = new Date('1994-10-26')
-const erik = new Person('Erik', birth);
-console.log(erik);
+const birth = new Date('1994-10-26');
+
+// const erik = new Person('Erik', birth);
+// console.log(erik);
 
 const examGrades = [10, 7, 8, 9];
 const projectGrades = [10, 7];

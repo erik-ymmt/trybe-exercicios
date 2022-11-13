@@ -1,7 +1,9 @@
-import Person from "./Person";
 import crypto from 'node:crypto';
+import IEnrollable from './IEnrollable';
+import Person from "./Person";
 
-export default class Student extends Person {
+
+export default class Student extends Person implements IEnrollable {
   private _id: string;
 
   constructor (
