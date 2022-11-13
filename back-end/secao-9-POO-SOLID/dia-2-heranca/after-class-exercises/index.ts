@@ -1,8 +1,8 @@
-import Evaluation from "./Evaluation";
-import EvaluationResult from "./EvaluationResult";
+// import Evaluation from "./Evaluation";
+// import EvaluationResult from "./EvaluationResult";
 import Exam from "./Exam";
 // import Person from "./Person";
-import Student from "./Student";
+// import Student from "./Student";
 import Subject from "./Subject";
 import Teacher from "./Teacher";
 
