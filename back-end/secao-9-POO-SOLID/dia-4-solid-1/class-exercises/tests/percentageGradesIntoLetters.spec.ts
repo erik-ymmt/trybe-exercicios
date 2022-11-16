@@ -1,111 +1,69 @@
-import 'mocha';
+import "mocha";
 import { expect } from "chai";
-import { percentageGradesIntoLetters } from "../src";
+import { getLetterGrades } from "../src";
 
 const disciplinesDict = {
-  mathematics: 'matemática',
+  mathematics: "matemática",
 };
 
-describe('Testando a função "percentageGradesIntoLetters"', function () {
-  describe('quando a nota é maior ou igual a 0.9', function () {
+describe('Testando a função "getLetterGrades"', function () {
+  describe("quando a nota é maior ou igual a 0.9", function () {
     it('retorna "A"', function () {
-      const student = {
-        name: 'Lee',
-        disciplines: [
-          { name: disciplinesDict.mathematics, grade: 0.9 },
-        ],
-      };
+      const discipline = { name: disciplinesDict.mathematics, grade: 0.9 };
 
-      const {
-        disciplines: [{ letterGrade }],
-      } = percentageGradesIntoLetters(student);
+      const { letterGrade } = getLetterGrades(discipline);
 
-      expect(letterGrade).to.be.equals('A');
+      expect(letterGrade).to.be.equals("A");
     });
   });
 
-  describe('quando a nota é maior ou igual a 0.8 e menor que 0.9', function () {
+  describe("quando a nota é maior ou igual a 0.8 e menor que 0.9", function () {
     it('retorna "B"', function () {
-      const student = {
-        name: 'Lee',
-        disciplines: [
-          { name: disciplinesDict.mathematics, grade: 0.8 },
-        ],
-      };
+      const discipline = { name: disciplinesDict.mathematics, grade: 0.8 };
 
-      const {
-        disciplines: [{ letterGrade }],
-      } = percentageGradesIntoLetters(student);
+      const { letterGrade } = getLetterGrades(discipline);
 
-      expect(letterGrade).to.be.equals('B');
+      expect(letterGrade).to.be.equals("B");
     });
   });
 
-  describe('quando a nota é maior ou igual a 0.7 e menor que 0.8', function () {
+  describe("quando a nota é maior ou igual a 0.7 e menor que 0.8", function () {
     it('retorna "C"', function () {
-      const student = {
-        name: 'Lee',
-        disciplines: [
-          { name: disciplinesDict.mathematics, grade: 0.7 },
-        ],
-      };
+      const discipline = { name: disciplinesDict.mathematics, grade: 0.7 };
 
-      const {
-        disciplines: [{ letterGrade }],
-      } = percentageGradesIntoLetters(student);
+      const { letterGrade } = getLetterGrades(discipline);
 
-      expect(letterGrade).to.be.equals('C');
+      expect(letterGrade).to.be.equals("C");
     });
   });
 
-  describe('quando a nota é maior ou igual a 0.6 e menor que 0.7', function () {
+  describe("quando a nota é maior ou igual a 0.6 e menor que 0.7", function () {
     it('retorna "D"', function () {
-      const student = {
-        name: 'Lee',
-        disciplines: [
-          { name: disciplinesDict.mathematics, grade: 0.6 },
-        ],
-      };
+      const discipline = { name: disciplinesDict.mathematics, grade: 0.6 };
 
-      const {
-        disciplines: [{ letterGrade }],
-      } = percentageGradesIntoLetters(student);
+      const { letterGrade } = getLetterGrades(discipline);
 
-      expect(letterGrade).to.be.equals('D');
+      expect(letterGrade).to.be.equals("D");
     });
   });
 
-  describe('quando a nota é maior ou igual a 0.1 e menor que 0.6', function () {
+  describe("quando a nota é maior ou igual a 0.1 e menor que 0.6", function () {
     it('retorna "E"', function () {
-      const student = {
-        name: 'Lee',
-        disciplines: [
-          { name: disciplinesDict.mathematics, grade: 0.1 },
-        ],
-      };
+      const discipline = { name: disciplinesDict.mathematics, grade: 0.1 };
 
-      const {
-        disciplines: [{ letterGrade }],
-      } = percentageGradesIntoLetters(student);
+      const { letterGrade } = getLetterGrades(discipline);
 
-      expect(letterGrade).to.be.equals('E');
+      expect(letterGrade).to.be.equals("E");
     });
   });
 
-  describe('quando a nota é menor que 0.1', function () {
+  describe("quando a nota é menor que 0.1", function () {
     it('retorna "F"', function () {
-      const student = {
-        name: 'Lee',
-        disciplines: [
-          { name: 'matemática', grade: 0.05 },
-        ],
-      };
+      const discipline = { name: disciplinesDict.mathematics, grade: 0.05 };
 
-      const {
-        disciplines: [{ letterGrade }],
-      } = percentageGradesIntoLetters(student);
+      const { letterGrade } = getLetterGrades(discipline);
 
-      expect(letterGrade).to.be.equals('F');
+      expect(letterGrade).to.be.equals("F");
     });
   });
 });
