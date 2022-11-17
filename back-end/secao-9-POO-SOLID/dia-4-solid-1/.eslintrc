@@ -1,0 +1,19 @@
+{
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts"]
+      }
+    },
+  },
+  "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "ts": "never",
+      }
+    ]
+  }
+}
