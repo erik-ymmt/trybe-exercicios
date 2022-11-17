@@ -1,5 +1,3 @@
-// EmailNotification.ts
-
 import Notificator from './Notificator';
 
 export default class EmailNotification implements Notificator {
