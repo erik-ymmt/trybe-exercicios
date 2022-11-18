@@ -1,10 +1,10 @@
-import fetch from "node-fetch";
+import fetch, { Response } from "node-fetch";
 import IAddressResponse from "../interfaces/IAddressResponse";
 
 class FooCepAPI {
   async getAddressByCEP(cep: string, _number: number): Promise<string> {
     const url = `https://viacep.com.br/ws/${cep}/json/`;
-    const response: any = await fetch(url);
+    const response: Response = await fetch(url);
     const json: IAddressResponse = await response.json();
     const address = json.logradouro;
 
