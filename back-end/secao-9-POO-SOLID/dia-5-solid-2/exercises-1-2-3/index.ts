@@ -1,5 +1,5 @@
-import CepService from "./CepService";
-import FooCepAPI from "./FooCepAPI";
+import CepService from "./services/CepService";
+import FooCepAPI from "./models/FooCepAPI";
 
 async function main() {
   const cepAPI = new FooCepAPI();
