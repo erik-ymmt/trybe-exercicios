@@ -1,6 +1,5 @@
 import ICepRepo from "./ICepAPI";
 
-
 class CepService {
   private readonly cepApi: ICepRepo;
 
