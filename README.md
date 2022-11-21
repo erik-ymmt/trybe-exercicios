@@ -46,7 +46,7 @@ A seguir os 4 módulos e suas respectivas listas de blocos.
  - [x] Node.js: ORM e Autenticação
  - [x] Deployment
  - [x] Typescript
- - [ ] Programação Orientada a Objetos e SOLID
+ - [x] Programação Orientada a Objetos e SOLID
  - [ ] Introdução ao Mongo DB
  - [ ] MongoDB com Node.js e POO
 
