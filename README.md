@@ -16,6 +16,7 @@ C --> C1(Dia 2.1)
 C --> C2(Dia 2.2)
 C --> C3(Dia 2.3)
 ```
+A partir do bloco 21, houve uma mudança de nomenclatura das aulas feita pela Trybe, agora os blocos não existem mais, dando lugar as seções. Cada módulo reinicia a contagem de seções da número 1. Ex.: Módulo 3 - Seção 1, Seção 2, etc. Módulo 4 - Seção 1, Seção 2, etc.
 A seguir os 4 módulos e suas respectivas listas de blocos.
 
 ## 1. Fundamentos
