@@ -1,5 +1,7 @@
 use("aula_29_2");
 
+db.filmes.find()
+
 db.filmes.drop();
 
 db.filmes.insertMany(
@@ -44,13 +46,20 @@ db.filmes.insertMany(
   ]
 );
 
+db.filmes.find({
+  "avalicao.ruim": {
+    $ne: 8
+  }
+})
+
+db.filmes.find().sort({ titulo: -1 })
+
 
 db.restaurants.countDocuments({ borough: { $in: ['Queens', 'Staten Island', 'Bronx'] } })
 db.restaurants.countDocuments({ cuisine: { $ne: 'American' } })
 db.restaurants.countDocuments({ rating: { $gte: 8 } })
 db.restaurants.countDocuments({ rating: { $lt:4 } })
 db.restaurants.countDocuments({ rating: { $nin: [5, 6, 7] }})
-
 
 // Selecione e faça a contagem dos restaurantes que não possuem avaliação menor ou igual a 5, essa consulta também deve retornar restaurantes que não possuem o campo de avaliação.
 db.restaurants.countDocuments({ $or: [ { rating:{$gt:5} }, { rating:{$eq:undefined} } ]})
