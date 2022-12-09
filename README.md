@@ -48,7 +48,7 @@ A seguir os 4 módulos e suas respectivas listas de blocos.
  - [x] Deployment
  - [x] Typescript
  - [x] Programação Orientada a Objetos e SOLID
- - [ ] Introdução ao Mongo DB
+ - [x] Introdução ao Mongo DB
  - [ ] MongoDB com Node.js e POO
 
 ## 4. Ciências da Computação
