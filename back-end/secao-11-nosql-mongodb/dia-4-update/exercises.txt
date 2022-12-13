@@ -1,4 +1,4 @@
-use ("conteudo_trybe");
+// use ("conteudo_trybe");
 
 // db.inventory.insertMany([
 // { "item": "journal", "qty": 25, "size": { "h": 14, "w": 21, "uom": "cm" }, "status": "A" },
@@ -57,3 +57,40 @@ use ("conteudo_trybe");
 
 // db.products.find({});
 
+// db.customers.insertOne(
+//   { _id: 1, status: "a", lastModified: ISODate("2013-10-02T01:11:18.965Z") }
+// );
+
+// db.customers.updateOne(
+//   { _id: 1 },
+//   { $currentDate: {
+//       lastModified: true,
+//       "cancellation.date": { $type: "timestamp" }
+//     }, $set: {
+//       "cancellation.reason": "user request",
+//       status: "D"
+//     }
+//   }
+// );
+
+// db.customers.find({})
+
+use ("class");
+db.movies.insertMany([
+  {
+  "title": "Batman",
+  "category": [ "action", "adventure" ],
+  "imdbRating": 7.6,
+  "budget": 35
+  },
+  {
+    "title": "Godzilla",
+    "category": [ "action", "adventure", "sci-fi" ],
+    "imdbRating": 6.6
+  },
+  {
+    "title": "Home Alone",
+    "category": [ "family", "comedy" ],
+    "imdbRating": 7.4
+  }
+])
