@@ -49,7 +49,7 @@ A seguir os 4 módulos e suas respectivas listas de blocos.
  - [x] Typescript
  - [x] Programação Orientada a Objetos e SOLID
  - [x] Introdução ao Mongo DB
- - [ ] MongoDB com Node.js e POO
+ - [x] MongoDB com Node.js e POO
 
 ## 4. Ciências da Computação
  - [ ] Introdução à Python
