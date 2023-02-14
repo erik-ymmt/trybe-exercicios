@@ -1,0 +1,13 @@
+Exercício 1:
+O que são os ODMs?
+	ODM é a sigla para Object Document Mapping, ao pé da letra é o mapeamento de objetos para documentos de um banco de dados não relacional. Ou seja, uma técnica que vai conectar a aplicação ao banco que utiliza documentos.
+
+Exercício 2:
+Qual a diferença entre ODM e ORM?
+	A diferença mais clara é que uma faz a relação entre objetos e bancos de dados relacionais, e a outra, bancos de dados não-relacionais. Ainda, a ORM tem o papel de mapear e conectar o banco com a aplicação, enquanto que a ODM também precisa garantir as restrições dos schemas se apliquem.
+
+Exercício 3:
+De acordo com a documentação do Mongoose, uma Interface, um Schema e uma Model servem para representar o quê? Dê exemplos
+
+Exercício 4:
+Quais são os 4 pilares da programação orientada a objetos? Discorra sobre a definição de cada um deles e dê exemplos
