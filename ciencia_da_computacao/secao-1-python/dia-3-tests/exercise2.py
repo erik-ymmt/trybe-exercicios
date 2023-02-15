@@ -17,9 +17,12 @@ def verify_num(input):
             decoded += "8"
         elif letter in ["W", "X", "Y"]:
             decoded += "9"
-        else:
+        elif letter in ["-", "0", "1"]:
             decoded += letter
+        else:
+            raise ValueError('Invalid input')
     print(decoded)
+    return decoded
 
 
 verify_num("1-HOME-SWEET-HOME")

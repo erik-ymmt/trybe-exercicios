@@ -26,6 +26,7 @@ def converter(num):
         arr.append(n + 1)
     converted = list(map(fizz_buzz_converter, arr))
     print(converted)
+    return converted
 
 
-converter(15)
+converter(3)
