@@ -52,7 +52,7 @@ A seguir os 4 módulos e suas respectivas listas de blocos.
  - [x] MongoDB com Node.js e POO
 
 ## 4. Ciências da Computação
- - [ ] Introdução à Python
+ - [x] Introdução à Python
  - [ ] Padrões de Projeto
  - [ ] Redes e Raspagem de Dados
  - [ ] Algoritimos
