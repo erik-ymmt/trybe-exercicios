@@ -53,8 +53,8 @@ A seguir os 4 módulos e suas respectivas listas de blocos.
 
 ## 4. Ciências da Computação
  - [x] Introdução à Python
- - [ ] Padrões de Projeto
- - [ ] Redes e Raspagem de Dados
- - [ ] Algoritimos
- - [ ] Estrutura de Dados I: Arrays, Hashmaps e Sets
- - [ ] Estrutura de Dados II: Listas, Filas e Pilhas
+ - [x] Padrões de Projeto
+ - [x] Redes e Raspagem de Dados
+ - [x] Algoritimos
+ - [x] Estrutura de Dados I: Arrays, Hashmaps e Sets
+ - [x] Estrutura de Dados II: Listas, Filas e Pilhas
